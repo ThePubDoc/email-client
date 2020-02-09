@@ -1,0 +1,73 @@
+$colors: (
+  primary: #0057a4,
+  accent: #4888d8,
+  bg: #fefff6,
+  punch: #c72926,
+  header: #023768,
+  txt: #767a7f,
+  drover: #fff5b1,
+  border: #c4c4c4
+);
+
+section,
+nav {
+  padding: 2rem;
+}
+
+nav {
+  background-color: map-get($colors, primary);
+}
+
+body,
+button,
+select,
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 1.2rem;
+  color: map-get($colors, header);
+  margin: 1rem 0;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+h2,
+p {
+  color: map-get($colors, txt);
+  margin: 0.3rem 0;
+}
+
+button {
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 0.5rem 0.3rem;
+  background-color: map-get($colors, accent);
+  font-weight: bold;
+  margin: 0.3rem 0;
+}
+
+button.large {
+  font-size: 1.2rem;
+  background-color: map-get($colors, punch);
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+}
+
+input,
+select {
+  background: none;
+  border: 1px solid map-get($colors, border);
+  border-radius: 2px;
+  font-size: smaller;
+  padding: 0.2rem 0.3rem;
+  margin: 0.3rem 0;
+}
