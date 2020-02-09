@@ -9,7 +9,10 @@ const path = require("path");
 const mainRoutes = require("./backend/routes/mainRoutes");
 var session = require("express-session");
 var cookieParser = require("cookie-parser");
+const mongoose = require("mongoose")
+const models = require("./backend/models/index")
 
+models.init();
 app.use(cors());
 app.use(compression());
 app.use(bodyParser.urlencoded({ extended: true }));
