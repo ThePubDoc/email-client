@@ -41,9 +41,27 @@ function del(req,res){
         })
 }
 
+function copy(req,res){
+    const id = req.query.id;
+    console.log(id);
+    Campaign.findOne({_id : id})
+      .exec((err,doc)=>{
+        if(err){
+          console.log("Error in fetching in cpoy")
+        }
+        else{
+          const {name, format, subject, file_url} = doc
+          const campaign_instance = new Campaign({name, format, subject, file_url})
+          campaign_instance.save();
+          res.redirect("/");
+        }
+      })
+}
+
 module.exports = {
     index : index,
     campaign : campaign,
     edit : edit,
-    del : del
+    del : del,
+    copy : copy,
 }

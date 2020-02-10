@@ -38,7 +38,7 @@
 
     <section id="main-section">
       <div id="sidebar">
-        <button class="panel-button-large">Create a Campaign</button>
+        <button class="panel-button-large" onclick="window.location = '/campaign' ">Create a Campaign</button>
         <button class="panel-button">Send a Campaign</button>
         <a href="" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
         <a href=""><i class="fas fa-check-circle"></i>Completed Queue</a>
@@ -78,7 +78,7 @@
               <div class="smaller hover-only">
                 <a href="">[view]</a>
                 <a href="">[send]</a>
-                <a href="">[copy]</a>
+                <a href="/copy?id=<%= campaigns[campaign]._id %>">[copy]</a>
                 <a href="/edit?id=<%= campaigns[campaign]._id %>" class="edit">[edit]</a>
                 <a href="/delete?id=<%= campaigns[campaign]._id %>" class="delete">[delete]</a>
               </div>
