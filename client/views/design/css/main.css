@@ -1,0 +1,228 @@
+nav #upper-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav #upper-nav i {
+  margin-right: 0.5rem;
+}
+
+nav #upper-nav #user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav #upper-nav #user-info a {
+  height: 0.8rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.3rem;
+}
+
+nav #upper-nav p.logo {
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 1.8rem 0 0 2rem;
+}
+
+nav #lower-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0 0 0 16rem;
+}
+
+nav #lower-nav a {
+  background-color: #4888d8;
+  margin: 0 5px 0 0;
+  padding: 0.5rem 0.8rem;
+  color: white;
+  font-size: 1rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+nav #lower-nav a:hover,
+nav #lower-nav a:focus,
+nav #lower-nav a.current {
+  background-color: white;
+  color: black;
+}
+
+section#main-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15rem auto;
+      grid-template-columns: 15rem auto;
+}
+
+section#main-section div#sidebar {
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 3rem;
+  border-right: 1px solid #c4c4c4;
+}
+
+section#main-section div#sidebar button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  color: #363636;
+  border: 1px solid #c4c4c4;
+  margin: 0.3rem 0;
+  padding: 0.3rem 0.3rem;
+}
+
+section#main-section div#sidebar button.large {
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #c72926;
+  color: white;
+  border: none;
+}
+
+section#main-section div#sidebar i {
+  margin-right: 0.5rem;
+}
+
+section#main-section div#sidebar a {
+  color: #363636;
+  padding-left: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 1rem 0 0 0;
+  border-left: 5px solid white;
+}
+
+section#main-section div#sidebar a.current {
+  color: #c72926;
+  border-left: 5px solid #c72926;
+}
+
+section#main-section div#main-content {
+  padding: 0 1rem;
+}
+
+section#main-section div#main-content div#pagination-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e9e7e7;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0.3rem;
+}
+
+section#main-section div#main-content div#pagination-bar .sub-bar {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#main-section div#main-content div#pagination-bar .sub-bar input,
+section#main-section div#main-content div#pagination-bar .sub-bar select,
+section#main-section div#main-content div#pagination-bar .sub-bar button {
+  margin: 0 0.3rem;
+  font-size: 0.7rem;
+  padding: 0.1rem;
+  font-weight: 100;
+}
+
+section#main-section div#main-content table#data-container {
+  margin: 2rem 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section#main-section div#main-content table#data-container tr {
+  border-bottom: 1px solid #c4c4c4;
+  padding: 1.3rem;
+}
+
+section#main-section div#main-content table#data-container tr td input.table-ip {
+  margin: 0.7rem;
+}
+
+section#main-section div#main-content table#data-container tr td .smaller {
+  font-size: smaller;
+  margin-bottom: 0.7rem;
+}
+
+section#main-section div#main-content table#data-container tr td .subject {
+  font-weight: bold;
+}
+
+section#main-section div#main-content table#data-container tr td a {
+  color: #4888d8;
+}
+
+section#main-section div#main-content table#data-container tr td a.edit {
+  color: #57b329;
+}
+
+section#main-section div#main-content table#data-container tr td a.delete {
+  color: #767a7f;
+}
+
+section#main-section div#main-content table#data-container tr td a:hover {
+  color: #0057a4;
+}
+
+section#main-section div#main-content table#data-container tr td div.status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+section#main-section div#main-content table#data-container tr td div.status i {
+  color: #83ff45;
+}
+
+section#main-section div#main-content table#data-container tr .hover-only {
+  display: none;
+}
+
+section#main-section div#main-content table#data-container tr:hover {
+  background-color: #fff5b1;
+}
+
+section#main-section div#main-content table#data-container tr:hover .hover-only {
+  display: inline;
+}
+/*# sourceMappingURL=main.css.map */
