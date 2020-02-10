@@ -1,4 +1,4 @@
-const campaign = require("../models/campaign")
+const Campaign = require("../models/campaign")
 const log = require("../../utils").log; 
 const multer = require("multer");
 
@@ -9,7 +9,7 @@ function index(req,res){
     try {
         const file_url = req.file.path;
         const {name, format, subject} = req.body;
-        const campaign_instance = new campaign({name, format, subject, file_url})
+        const campaign_instance = new Campaign({name, format, subject, file_url})
         campaign_instance.save();
         log.info("saved");
         res.redirect("/");
@@ -22,7 +22,7 @@ function index(req,res){
 function edit(req,res){
     const id = req.query.id;
     const {name, format, subject} = req.body;
-    campaign.findOneAndUpdate(
+    Campaign.findOneAndUpdate(
         {_id : id},
         {name, format, subject},
         {upsert : false},
@@ -38,12 +38,7 @@ function edit(req,res){
     )
 }
 
-function del(req,res){
-    const id = req.query.id;
-}
-
 module.exports = {
     index : index,
     edit : edit,
-    del : del,
 }
