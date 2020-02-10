@@ -35,5 +35,8 @@
     "sqlite3": "^4.0.9",
     "supertest": "^4.0.2",
     "wget-improved": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
