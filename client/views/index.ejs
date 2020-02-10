@@ -11,11 +11,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
     />
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
-    ></script>
-    <script type="text/javascript" src="js/main.js"></script>
     <title>KonfinityPost</title>
   </head>
   <body>
@@ -38,7 +33,12 @@
 
     <section id="main-section">
       <div id="sidebar">
-        <button class="panel-button-large" onclick="window.location = '/campaign' ">Create a Campaign</button>
+        <button
+          class="panel-button-large"
+          onclick="window.location.href = '/campaign'"
+        >
+          Create a Campaign
+        </button>
         <button class="panel-button">Send a Campaign</button>
         <a href="" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
         <a href=""><i class="fas fa-check-circle"></i>Completed Queue</a>
@@ -78,21 +78,31 @@
               <div class="smaller hover-only">
                 <a href="">[view]</a>
                 <a href="">[send]</a>
-                <a href="/copy?id=<%= campaigns[campaign]._id %>">[copy]</a>
-                <a href="/edit?id=<%= campaigns[campaign]._id %>" class="edit">[edit]</a>
-                <a href="/delete?id=<%= campaigns[campaign]._id %>" class="delete">[delete]</a>
+                <a href="">[copy]</a>
+                <a href="/edit?id=<%= campaigns[campaign]._id %>" class="edit"
+                  >[edit]</a
+                >
+                <a
+                  href="/delete?id=<%= campaigns[campaign]._id %>"
+                  class="delete"
+                  >[delete]</a
+                >
               </div>
             </td>
             <td>
               <p><%= campaigns[campaign].subject %></p>
               <p class="smaller create-date">
-                <%=campaigns[campaign].createdAt %>
+                Created on <%=campaigns[campaign].createdAt.getDate() + '/'+
+                campaigns[campaign].createdAt.getMonth() + '/'+
+                campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>
             <td>
               <p>(Sent to 3/3)</p>
               <p class="smaller sent-date">
-                <%=campaigns[campaign].createdAt %>
+                Last Sent <%=campaigns[campaign].createdAt.getDate() + '/'+
+                campaigns[campaign].createdAt.getMonth() + '/'+
+                campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>
             <td>
