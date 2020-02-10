@@ -11,11 +11,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
     />
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
-    ></script>
-    <script type="text/javascript" src="js/main.js"></script>
     <title>KonfinityPost</title>
   </head>
   <body>
@@ -86,13 +81,17 @@
             <td>
               <p><%= campaigns[campaign].subject %></p>
               <p class="smaller create-date">
-                <%=campaigns[campaign].createdAt %>
+                Created on <%=campaigns[campaign].createdAt.getDate() + '/'+
+                campaigns[campaign].createdAt.getMonth() + '/'+
+                campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>
             <td>
               <p>(Sent to 3/3)</p>
               <p class="smaller sent-date">
-                <%=campaigns[campaign].createdAt %>
+                Last Sent <%=campaigns[campaign].createdAt.getDate() + '/'+
+                campaigns[campaign].createdAt.getMonth() + '/'+
+                campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>
             <td>
