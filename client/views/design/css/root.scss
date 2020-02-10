@@ -230,6 +230,7 @@ body {
     width: 100%;
     border-radius: 5px;
     font-weight: bold;
+    font-size: 1rem;
     &:hover {
       background-color: map-get($colors, punch-hover);
       cursor: pointer;
@@ -259,6 +260,10 @@ body {
       font-size: 0.9rem;
     }
 
+    .subject {
+      font-weight: bold;
+    }
+
     tr {
       border-bottom: 1px solid map-get($colors, border);
       padding: 0;
@@ -271,13 +276,10 @@ body {
           font-size: smaller;
           margin-bottom: 0.7rem;
         }
-        .subject {
-          font-weight: bold;
-        }
         a {
           color: map-get($colors, accent);
           &:hover {
-            color: map-get($colors, primary);
+            color: map-get($colors, accent-hover);
           }
           &.edit {
             color: #57b329;
@@ -286,9 +288,9 @@ body {
             }
           }
           &.delete {
-            color: map-get($colors, txt);
+            color: map-get($colors, punch);
             &:hover {
-              color: #474747;
+              color: map-get($colors, punch-hover);
             }
           }
         }
