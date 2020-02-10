@@ -160,6 +160,11 @@ body {
     margin-bottom: 0.5rem;
     font-weight: 300;
     color: #2a2a2a;
+
+    &.subject {
+      font-weight: bold;
+    }
+
     // @media only screen and (min-device-width : 319px){
     //     font-size: 1rem;
     //     min-width: 100%;
@@ -241,27 +246,22 @@ body {
     background-color: map-get($colors, primary);
     padding: 0.7rem 1.5rem;
     color: white;
-    font-weight: 500;
+    font-weight: bold;
     border: none;
-
+    border-radius: 5px;
     &:hover {
       background-color: map-get($colors, primary-hover);
-
       cursor: pointer;
     }
   }
 
-  .data-container {
+  table.data-container {
     margin: 2rem 0;
     width: 100%;
     box-sizing: border-box;
 
     p {
       font-size: 0.9rem;
-    }
-
-    .subject {
-      font-weight: bold;
     }
 
     tr {
@@ -317,6 +317,47 @@ body {
         .hover-only {
           display: inline;
         }
+      }
+    }
+  }
+
+  form {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      margin: 0.3rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.8rem;
+
+      label {
+        color: map-get($colors, txt);
+        margin-bottom: 0.3rem;
+      }
+
+      input,
+      select,
+      textarea {
+        box-sizing: border-box;
+        width: 30rem;
+        padding: 0.2rem;
+        border: 1px solid map-get($colors, border);
+        border-radius: 2px;
+        &:focus {
+          transition: 0.3s ease-in-out;
+          border-color: map-get($colors, primary);
+        }
+        &[type="file"] {
+          padding: 0;
+        }
+      }
+
+      button {
+        margin: 0.5rem 0;
+        width: 100px;
       }
     }
   }

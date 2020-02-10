@@ -213,6 +213,10 @@ body p {
   color: #2a2a2a;
 }
 
+body p.subject {
+  font-weight: bold;
+}
+
 body p a {
   font-weight: 500;
   text-decoration: underline;
@@ -303,8 +307,9 @@ body .action-button {
   background-color: #0057a4;
   padding: 0.7rem 1.5rem;
   color: white;
-  font-weight: 500;
+  font-weight: bold;
   border: none;
+  border-radius: 5px;
 }
 
 body .action-button:hover {
@@ -312,60 +317,56 @@ body .action-button:hover {
   cursor: pointer;
 }
 
-body .data-container {
+body table.data-container {
   margin: 2rem 0;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-body .data-container p {
+body table.data-container p {
   font-size: 0.9rem;
 }
 
-body .data-container .subject {
-  font-weight: bold;
-}
-
-body .data-container tr {
+body table.data-container tr {
   border-bottom: 1px solid #c4c4c4;
   padding: 0;
 }
 
-body .data-container tr td input.table-ip {
+body table.data-container tr td input.table-ip {
   margin: 0.7rem;
 }
 
-body .data-container tr td .smaller {
+body table.data-container tr td .smaller {
   font-size: smaller;
   margin-bottom: 0.7rem;
 }
 
-body .data-container tr td a {
+body table.data-container tr td a {
   color: #4888d8;
 }
 
-body .data-container tr td a:hover {
+body table.data-container tr td a:hover {
   color: #509ff7;
 }
 
-body .data-container tr td a.edit {
+body table.data-container tr td a.edit {
   color: #57b329;
 }
 
-body .data-container tr td a.edit:hover {
+body table.data-container tr td a.edit:hover {
   color: #3d6d25;
 }
 
-body .data-container tr td a.delete {
+body table.data-container tr td a.delete {
   color: #c72926;
 }
 
-body .data-container tr td a.delete:hover {
+body table.data-container tr td a.delete:hover {
   color: #b0281a;
 }
 
-body .data-container tr td div.status {
+body table.data-container tr td div.status {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -376,23 +377,87 @@ body .data-container tr td div.status {
   text-align: center;
 }
 
-body .data-container tr td div.status i {
+body table.data-container tr td div.status i {
   color: #83ff45;
 }
 
-body .data-container tr td.fixed-width-14 {
+body table.data-container tr td.fixed-width-14 {
   width: 14rem;
 }
 
-body .data-container tr .hover-only {
+body table.data-container tr .hover-only {
   display: none;
 }
 
-body .data-container tr:hover {
+body table.data-container tr:hover {
   background-color: #fff5b1;
 }
 
-body .data-container tr:hover .hover-only {
+body table.data-container tr:hover .hover-only {
   display: inline;
+}
+
+body form {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body form div {
+  margin: 0.3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+body form div label {
+  color: #767a7f;
+  margin-bottom: 0.3rem;
+}
+
+body form div input,
+body form div select,
+body form div textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 30rem;
+  padding: 0.2rem;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+}
+
+body form div input:focus,
+body form div select:focus,
+body form div textarea:focus {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  border-color: #0057a4;
+}
+
+body form div input[type="file"],
+body form div select[type="file"],
+body form div textarea[type="file"] {
+  padding: 0;
+}
+
+body form div button {
+  margin: 0.5rem 0;
+  width: 100px;
 }
 /*# sourceMappingURL=root.css.map */
