@@ -11,35 +11,35 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
     />
-    <title>Document</title>
+    <title>KonfinityPost</title>
   </head>
   <body>
     <nav>
-      <div id="upper-nav">
+      <div id="nav-logo">
         <p class="logo"><i class="fas fa-envelope-open"></i>KonfinityPost</p>
-        <div id="user-info">
+        <!-- <div id="user-info">
           <a href="">Konfinity,</a>
           <a href="">Settings</a>
           <a>|</a>
           <a href="">Logout</a>
-        </div>
+        </div> -->
       </div>
-      <div id="lower-nav">
-        <a href="" class="current">Campaigns</a>
-        <a href="">Lists</a>
-        <a href="">Reports</a>
+      <div id="nav-menu">
+        <a href="" class="menu-button current">Campaigns</a>
+        <a href="" class="menu-button">Lists</a>
+        <a href="" class="menu-button">Reports</a>
       </div>
     </nav>
 
     <section id="main-section">
       <div id="sidebar">
-        <button class="large">Create a Campaign</button>
-        <button>Send a Campaign</button>
+        <button class="panel-button-large">Create a Campaign</button>
+        <button class="panel-button">Send a Campaign</button>
         <a href="" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
-        <a href=""><i class="fas fa-clock"></i>Scheduled Queue</a>
+        <a href=""><i class="fas fa-check-circle"></i>Completed Queue</a>
       </div>
       <div id="main-content">
-        <h1><i class="fas fa-envelope"></i> Email Campaigns</h1>
+        <h1><i class="fas fa-envelope"></i>Email Campaigns</h1>
         <div id="pagination-bar">
           <div id="left-bar" class="sub-bar">
             <input type="checkbox" name="" id="" />
@@ -53,13 +53,19 @@
               <option value="">10 per page</option>
             </select>
             <p>[Page 1 of 1]</p>
-            <p><a>--</a><a>-</a>1<a>-</a><a>--</a></p>
+            <p>
+              <a> <i class="fas fa-fast-backward"></i></a>
+              <a><i class="fas fa-step-backward"></i></a>
+              <a>1</a>
+              <a> <i class="fas fa-step-forward"></i></a>
+              <a><i class="fas fa-fast-forward"></i></a>
+            </p>
           </div>
         </div>
-        <table id="data-container">
+        <table class="data-container">
           <tr>
             <td><input class="table-ip" type="checkbox" name="" id="" /></td>
-            <td class="subject-data">
+            <td class="fixed-width-14">
               <p class="subject">Campus Ambassador</p>
               <div class="smaller hover-only">
                 <a href="">[view]</a>
