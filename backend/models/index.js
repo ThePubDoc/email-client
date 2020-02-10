@@ -3,6 +3,7 @@ const log = require("../../utils").log;
 
 db.set("useNewUrlParser", true); 
 db.set("useUnifiedTopology", true); 
+db.set("useFindAndModify", false);
 
 module.exports = models= {};
 

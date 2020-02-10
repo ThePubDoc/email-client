@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/root.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav></nav>
+    <form action="/edit?id=<%= campaign[0]._id %>" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" value="<%= campaign[0].name %>">
+      <input type="text" name="format" value="<%= campaign[0].format %>">
+      <input type="text" name="subject" value="<%= campaign[0].subject %>">
+      <input type="file" name="file" value="<%= campaign[0].file_url %>">
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
