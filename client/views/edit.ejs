@@ -10,11 +10,11 @@
   </head>
   <body>
     <nav></nav>
-    <form action="/campaign" method="POST" enctype="multipart/form-data">
-      <input type="text" name="name">
-      <input type="text" name="format">
-      <input type="text" name="subject">
-      <input type="file" name="file">
+    <form action="/edit?id=<%= campaign[0]._id %>" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" value="<%= campaign[0].name %>">
+      <input type="text" name="format" value="<%= campaign[0].format %>">
+      <input type="text" name="subject" value="<%= campaign[0].subject %>">
+      <input type="file" name="file" value="<%= campaign[0].file_url %>">
       <button>Submit</button>
     </form>
   </body>

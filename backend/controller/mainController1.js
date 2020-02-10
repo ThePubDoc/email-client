@@ -1,0 +1,49 @@
+const Campaign = require('../models/campaign')
+const multer = require('multer');
+
+async function index(req,res){
+    const campaigns = await Campaign.find({});
+    res.render("index",{
+        campaigns
+    });
+}
+
+function campaign(req,res){
+    res.render("campaign");
+}
+
+function edit(req,res){
+    const id = req.query.id;
+    
+    Campaign.find({_id : id})
+        .exec(function(err,campaign){
+            if(err){
+                console.log("Error in fetching id")
+            }
+            else{
+                res.render("edit", {
+                    campaign : campaign
+                })
+            }
+        })
+}
+
+function del(req,res){
+    const id = req.query.id;
+    Campaign.findOneAndDelete({_id : id})
+        .exec((err,campaign)=>{
+            if(err){
+                console.log("Error in deleting");
+            }
+            else{
+                res.redirect('/')
+            }
+        })
+}
+
+module.exports = {
+    index : index,
+    campaign : campaign,
+    edit : edit,
+    del : del
+}
