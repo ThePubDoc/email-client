@@ -167,7 +167,7 @@ section#main-section div#main-content table#data-container {
 
 section#main-section div#main-content table#data-container tr {
   border-bottom: 1px solid #c4c4c4;
-  padding: 1.3rem;
+  padding: 0;
 }
 
 section#main-section div#main-content table#data-container tr td input.table-ip {
@@ -212,6 +212,10 @@ section#main-section div#main-content table#data-container tr td div.status {
 
 section#main-section div#main-content table#data-container tr td div.status i {
   color: #83ff45;
+}
+
+section#main-section div#main-content table#data-container tr td.subject-data {
+  width: 14rem;
 }
 
 section#main-section div#main-content table#data-container tr .hover-only {

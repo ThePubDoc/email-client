@@ -135,9 +135,11 @@ section#main-section {
       margin: 2rem 0;
       width: 100%;
       box-sizing: border-box;
+
       tr {
         border-bottom: 1px solid map-get($colors, border);
-        padding: 1.3rem;
+        padding: 0;
+
         td {
           input.table-ip {
             margin: 0.7rem;
@@ -169,6 +171,10 @@ section#main-section {
               color: #83ff45;
             }
           }
+        }
+
+        td.subject-data {
+          width: 14rem;
         }
 
         .hover-only {
