@@ -1,73 +1,325 @@
 $colors: (
   primary: #0057a4,
+  primary-hover: #3079ed,
   accent: #4888d8,
+  accent-hover: #509ff7,
   bg: #fefff6,
   punch: #c72926,
+  punch-hover: #b0281a,
   header: #023768,
   txt: #767a7f,
-  drover: #fff5b1,
+  data-hover: #fff5b1,
   border: #c4c4c4
 );
 
-section,
-nav {
-  padding: 2rem;
-}
-
-nav {
-  background-color: map-get($colors, primary);
-}
-
-body,
-button,
-select,
-input {
+body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+  }
+  strong {
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    max-width: 35rem;
+    @media only screen and (min-device-width: 320px) {
+      font-size: 1.5rem;
+    }
+    @media only screen and (min-device-width: 350px) and (max-device-width: 480px) {
+      font-size: 2.3rem;
+      line-height: 1.3;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 2.5rem;
+      line-height: 1.125;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 2.5rem;
+      line-height: 1.05;
+    }
+    @media only screen and (min-width: 1824px) {
+      font-size: 2.7rem;
+      line-height: 1.05;
+    }
+  }
+  h2 {
+    font-size: 1.625rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 1.625rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 2.25rem;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+    @media only screen and (min-width: 1824px) {
+      font-size: 2.25rem;
+      line-height: 1.25;
+    }
+  }
+  h3 {
+    font-size: 1.375rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 1.375rem;
+      line-height: 1.33;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 1.75rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-width: 1824px) {
+      font-size: 1.75rem;
+      line-height: 1.25;
+    }
+  }
+  h4 {
+    font-size: 1.375rem;
+    line-height: 1.13;
+    margin-bottom: 0.5rem;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 1.375rem;
+      line-height: 1.13;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-width: 1824px) {
+      font-size: 1.75rem;
+      line-height: 1.25;
+    }
+  }
+  h5 {
+    font-size: 1rem;
+    line-height: 1.13;
+    margin-bottom: 0.5rem;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 1rem;
+      line-height: 1.13;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+    @media only screen and (min-width: 1824px) {
+      font-size: 1.3rem;
+      line-height: 1.25;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 31rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    color: #2a2a2a;
+    // @media only screen and (min-device-width : 319px){
+    //     font-size: 1rem;
+    //     min-width: 100%;
+    // }
+    a {
+      font-weight: 500;
+      text-decoration: underline;
+      font-size: inherit;
+    }
+    @media only screen and (min-device-width: 350px) and (max-device-width: 480px) {
+      font-size: 1rem;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 1.15rem;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 1.15rem;
+      max-width: 33rem;
+    }
+    @media only screen and (min-width: 1824px) {
+      font-size: 1.15rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .menu-button {
+    background-color: map-get($colors, accent);
+    margin: 0 5px 0 0;
+    padding: 0.5rem 0.8rem;
+    color: white;
+    font-size: 1rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    &:hover {
+      background-color: map-get($colors, accent-hover);
+      cursor: pointer;
+    }
+  }
+
+  .panel-button {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: map-get($colors, darktxt);
+    border: 1px solid map-get($colors, border);
+    padding: 0.3rem 0.3rem;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #ebe8e8;
+      cursor: pointer;
+    }
+  }
+
+  .panel-button-large {
+    padding: 0.7rem 1.5rem;
+    background-color: map-get($colors, punch);
+    color: white;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    &:hover {
+      background-color: map-get($colors, punch-hover);
+      cursor: pointer;
+    }
+  }
+
+  .action-button {
+    background-color: map-get($colors, primary);
+    padding: 0.7rem 1.5rem;
+    color: white;
+    font-weight: 500;
+    border: none;
+
+    &:hover {
+      background-color: map-get($colors, primary-hover);
+
+      cursor: pointer;
+    }
+  }
+
+  .data-container {
+    margin: 2rem 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .subject {
+      font-weight: bold;
+    }
+
+    tr {
+      border-bottom: 1px solid map-get($colors, border);
+      padding: 0;
+
+      td {
+        input.table-ip {
+          margin: 0.7rem;
+        }
+        .smaller {
+          font-size: smaller;
+          margin-bottom: 0.7rem;
+        }
+        a {
+          color: map-get($colors, accent);
+          &:hover {
+            color: map-get($colors, accent-hover);
+          }
+          &.edit {
+            color: #57b329;
+            &:hover {
+              color: #3d6d25;
+            }
+          }
+          &.delete {
+            color: map-get($colors, punch);
+            &:hover {
+              color: map-get($colors, punch-hover);
+            }
+          }
+        }
+        div.status {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          i {
+            color: #83ff45;
+          }
+        }
+      }
+
+      td.fixed-width-14 {
+        width: 14rem;
+      }
+
+      .hover-only {
+        display: none;
+      }
+
+      &:hover {
+        background-color: map-get($colors, data-hover);
+        .hover-only {
+          display: inline;
+        }
+      }
+    }
+  }
 }
 
-h1 {
-  font-size: 1.2rem;
-  color: map-get($colors, header);
-  margin: 1rem 0;
-}
-
-h1,
-h2 {
-  font-weight: bold;
-}
-
-h2,
-p {
-  color: map-get($colors, txt);
-  margin: 0.3rem 0;
-}
-
-button {
-  color: white;
-  background: none;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  padding: 0.5rem 0.3rem;
-  background-color: map-get($colors, accent);
-  font-weight: bold;
-  margin: 0.3rem 0;
-}
-
-button.large {
-  font-size: 1.2rem;
-  background-color: map-get($colors, punch);
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
-}
-
-input,
-select {
-  background: none;
-  border: 1px solid map-get($colors, border);
-  border-radius: 2px;
-  font-size: smaller;
-  padding: 0.2rem 0.3rem;
-  margin: 0.3rem 0;
-}
+//end of body tag

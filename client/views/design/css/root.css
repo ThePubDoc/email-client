@@ -291,6 +291,7 @@ body .panel-button-large {
   width: 100%;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 body .panel-button-large:hover {
@@ -322,6 +323,10 @@ body .data-container p {
   font-size: 0.9rem;
 }
 
+body .data-container .subject {
+  font-weight: bold;
+}
+
 body .data-container tr {
   border-bottom: 1px solid #c4c4c4;
   padding: 0;
@@ -336,16 +341,12 @@ body .data-container tr td .smaller {
   margin-bottom: 0.7rem;
 }
 
-body .data-container tr td .subject {
-  font-weight: bold;
-}
-
 body .data-container tr td a {
   color: #4888d8;
 }
 
 body .data-container tr td a:hover {
-  color: #0057a4;
+  color: #509ff7;
 }
 
 body .data-container tr td a.edit {
@@ -357,11 +358,11 @@ body .data-container tr td a.edit:hover {
 }
 
 body .data-container tr td a.delete {
-  color: #767a7f;
+  color: #c72926;
 }
 
 body .data-container tr td a.delete:hover {
-  color: #474747;
+  color: #b0281a;
 }
 
 body .data-container tr td div.status {

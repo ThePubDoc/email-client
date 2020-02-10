@@ -9,8 +9,8 @@ const path = require("path");
 const mainRoutes = require("./backend/routes/mainRoutes");
 var session = require("express-session");
 var cookieParser = require("cookie-parser");
-const mongoose = require("mongoose")
-const models = require("./backend/models/index")
+const mongoose = require("mongoose");
+const models = require("./backend/models/index");
 
 models.init();
 app.use(cors());
@@ -27,7 +27,7 @@ app.use(
 app.set("views", __dirname + "/client/views");
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "ejs");
-app.use(express.static(path.resolve(__dirname, "client")));
+app.use(express.static(path.resolve(__dirname, "client/assets")));
 app.use(logger("dev"));
 app.use("/", mainRoutes);
 app.set("port", process.env.PORT || 4000);
