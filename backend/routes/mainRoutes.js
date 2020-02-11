@@ -54,8 +54,12 @@ router
 router
   .route("/campaigns/edit")
   .post(campaignFiles.single("file"), campaignController.edit);
+
 router
   .route("/lists/create")
   .post(listFiles.single("file"), listController.createList);
+router
+  .route("/lists/edit")
+  .post(listFiles.single("file"), listController.edit_list)
 
 module.exports = router;

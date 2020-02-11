@@ -25,25 +25,18 @@
         </div> -->
       </div>
       <div id="nav-menu">
-        <a href="/" class="menu-button current">Campaigns</a>
-        <a href="/lists" class="menu-button">Lists</a>
+        <a href="" class="menu-button current">Campaigns</a>
+        <a href="" class="menu-button">Lists</a>
         <a href="" class="menu-button">Reports</a>
       </div>
     </nav>
 
     <section id="main-section">
       <div id="sidebar">
-        <button
-          class="panel-button-large"
-          onclick="window.location.href = '/campaigns/create'"
-        >
-          Create a Campaign
-        </button>
+        <button class="panel-button-large">Create a Campaign</button>
         <button class="panel-button">Send a Campaign</button>
-        <a href="/" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
-        <a href="/campaigns/completed"
-          ><i class="fas fa-check-circle"></i>Completed Queue</a
-        >
+        <a href="" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
+        <a href=""><i class="fas fa-check-circle"></i>Completed Queue</a>
       </div>
       <div id="main-content">
         <h1><i class="fas fa-envelope"></i>Email Campaigns</h1>
@@ -69,49 +62,26 @@
             </p>
           </div>
         </div>
-
         <table class="data-container">
-          <% for (campaign in campaigns){ %>
-
           <tr>
-            <td class="fixed-width-3">
-              <input class="table-ip" type="checkbox" name="" id="" />
-            </td>
+            <td><input class="table-ip" type="checkbox" name="" id="" /></td>
             <td class="fixed-width-14">
-              <p class="subject"><%= campaigns[campaign].name %></p>
+              <p class="subject">Campus Ambassador</p>
               <div class="smaller hover-only">
-                <a href="/campaigns/view?id=<%= campaigns[campaign]._id %>">[view]</a>
+                <a href="">[view]</a>
                 <a href="">[send]</a>
-                <a href="/campaigns/copy?id=<%= campaigns[campaign]._id %>"
-                  >[copy]</a
-                >
-                <a
-                  href="/campaigns/edit?id=<%= campaigns[campaign]._id %>"
-                  class="edit"
-                  >[edit]</a
-                >
-                <a
-                  href="/campaigns/delete?id=<%= campaigns[campaign]._id %>"
-                  class="delete"
-                  >[delete]</a
-                >
+                <a href="">[copy]</a>
+                <a href="" class="edit">[edit]</a>
+                <a href="" class="delete">[delete]</a>
               </div>
             </td>
             <td>
-              <p><%= campaigns[campaign].subject %></p>
-              <p class="smaller create-date">
-                Created on <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
-                campaigns[campaign].createdAt.getFullYear(); %>
-              </p>
+              <p>Become a Konfinity Campus Ambassador..</p>
+              <p class="smaller">Created on 07 Feb 2020 by Konfinity</p>
             </td>
             <td>
               <p>(Sent to 3/3)</p>
-              <p class="smaller sent-date">
-                Last Sent <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
-                campaigns[campaign].createdAt.getFullYear(); %>
-              </p>
+              <p class="smaller">Last sent 07 Feb 2020</p>
             </td>
             <td>
               <div class="status">
@@ -126,8 +96,39 @@
               </div>
             </td>
           </tr>
-
-          <% } %>
+          <tr>
+            <td><input class="table-ip" type="checkbox" name="" id="" /></td>
+            <td class="subject-data">
+              <p class="subject">Campus Ambassador</p>
+              <div class="smaller hover-only">
+                <a href="">[view]</a>
+                <a href="">[send]</a>
+                <a href="">[copy]</a>
+                <a href="" class="edit">[edit]</a>
+                <a href="" class="delete">[delete]</a>
+              </div>
+            </td>
+            <td>
+              <p>Become a Konfinity Campus Ambassador..</p>
+              <p class="smaller">Created on 07 Feb 2020 by Konfinity</p>
+            </td>
+            <td>
+              <p>(Sent to 3/3)</p>
+              <p class="smaller">Last sent 07 Feb 2020</p>
+            </td>
+            <td>
+              <div class="status">
+                <i class="fas fa-circle smaller"></i>
+                <p class="smaller">state</p>
+              </div>
+            </td>
+            <td>
+              <div class="status">
+                <i class="fas fa-circle smaller"></i>
+                <p class="smaller">archive</p>
+              </div>
+            </td>
+          </tr>
         </table>
       </div>
     </section>

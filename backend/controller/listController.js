@@ -15,6 +15,26 @@ function createList(req, res) {
   }
 }
 
+function edit_list(req,res){
+  const id = req.query.id;
+  const {name, format, subject} = req.body;
+  List.findOneAndUpdate(
+      {_id : id},
+      {name,},
+      {upsert : false},
+      (err,doc) => {
+          if(err){
+              console.log("error in updating")
+          }
+          else{
+              // console.log(doc)
+              res.redirect("/lists")
+          }
+      }
+  )
+}
+
 module.exports = {
-  createList
+  createList,
+  edit_list,
 };

@@ -71,7 +71,7 @@ function view_campaign(req,res){
       console.log("Error in viewing campaign file")
     }
     else{
-
+      console.log(doc)
     }
   })
 }
