@@ -47,7 +47,6 @@ function del_campaign(req, res) {
 
 function copy_campaign(req, res) {
   const id = req.query.id;
-  console.log(id);
   Campaign.findOne({ _id: id }).exec((err, doc) => {
     if (err) {
       console.log("Error in fetching in cpoy");
@@ -65,6 +64,18 @@ function copy_campaign(req, res) {
   });
 }
 
+function view_campaign(req,res){
+  const id = req.query.id;
+  Campaign.findOne({_id : id}).exec((err,doc)=>{
+    if(err){
+      console.log("Error in viewing campaign file")
+    }
+    else{
+
+    }
+  })
+}
+
 function create_list(req, res) {
   res.render("create-list");
 }
@@ -76,6 +87,50 @@ async function lists(req, res) {
   });
 }
 
+function edit_list(req, res) {
+  const id = req.query.id;
+
+  List.find({ _id: id }).exec(function(err, list) {
+    if (err) {
+      console.log("Error in fetching id");
+    } else {
+      res.render("edit-list", {
+        list: list
+      });
+    }
+  });
+}
+
+function del_list(req, res) {
+  const id = req.query.id;
+  console.log(id)
+  List.findOneAndDelete({ _id: id }).exec((err, list) => {
+    if (err) {
+      console.log("Error in deleting");
+    } else {
+      res.redirect("/lists");
+    }
+  });
+}
+
+function copy_list(req, res) {
+  const id = req.query.id;
+  // console.log(id);
+  List.findOne({ _id: id }).exec((err, doc) => {
+    if (err) {
+      console.log("Error in fetching in cpoy");
+    } else {
+      const { name, file_url } = doc;
+      const list_instance = new List({
+        name,
+        file_url
+      });
+      list_instance.save();
+      res.redirect("/lists");
+    }
+  });
+}
+
 module.exports = {
   index,
   completed_campaigns,
@@ -83,6 +138,10 @@ module.exports = {
   edit_campaign,
   del_campaign,
   copy_campaign,
+  view_campaign,
   create_list,
-  lists
+  lists,
+  edit_list,
+  del_list,
+  copy_list
 };

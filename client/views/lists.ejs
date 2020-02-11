@@ -91,9 +91,9 @@
               <div class="smaller hover-only">
                 <a href="">[view contacts]</a>
                 <a href="">[add contacts]</a>
-                <a href="">[copy]</a>
-                <a href="" class="edit">[edit]</a>
-                <a href="" class="delete">[delete]</a>
+                <a href="/lists/copy?id=<%= lists[list]._id %>">[copy]</a>
+                <a href="/lists/edit?id=<%= lists[list]._id %>" class="edit">[edit]</a>
+                <a href="/lists/delete?id=<%= lists[list]._id %>" class="delete">[delete]</a>
               </div>
             </td>
             <td>
