@@ -46,7 +46,7 @@
         >
       </div>
       <div id="main-content">
-        <h1><i class="fas fa-envelope"></i>Email Campaigns</h1>
+        <h1><i class="fas fa-envelope"></i>Campaigns Queue</h1>
         <div id="pagination-bar">
           <div id="left-bar" class="sub-bar">
             <input type="checkbox" name="" id="" />
@@ -80,7 +80,9 @@
             <td class="fixed-width-14">
               <p class="subject"><%= campaigns[campaign].name %></p>
               <div class="smaller hover-only">
-                <a href="/campaigns/view?id=<%= campaigns[campaign]._id %>">[view]</a>
+                <a href="/campaigns/view?id=<%= campaigns[campaign]._id %>"
+                  >[view]</a
+                >
                 <a href="">[send]</a>
                 <a href="/campaigns/copy?id=<%= campaigns[campaign]._id %>"
                   >[copy]</a
