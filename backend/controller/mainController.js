@@ -3,6 +3,7 @@ const List = require("../models/list");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
+const csv = require('csv-parser');
 
 async function index(req, res) {
   const campaigns = await Campaign.find({});
