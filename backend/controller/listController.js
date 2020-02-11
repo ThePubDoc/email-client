@@ -15,26 +15,24 @@ function createList(req, res) {
   }
 }
 
-function edit_list(req,res){
+function edit_list(req, res) {
   const id = req.query.id;
-  const {name} = req.body;
+  const { name } = req.body;
   List.findOneAndUpdate(
-      {_id : id},
-      {name,},
-      {upsert : false},
-      (err,doc) => {
-          if(err){
-              console.log("error in updating")
-          }
-          else{
-              // console.log(doc)
-              res.redirect("/lists")
-          }
+    { _id: id },
+    { name },
+    { upsert: false },
+    (err, doc) => {
+      if (err) {
+        console.log("error in updating");
+      } else {
+        res.redirect("/lists");
       }
-  )
+    }
+  );
 }
 
 module.exports = {
   createList,
-  edit_list,
+  edit_list
 };

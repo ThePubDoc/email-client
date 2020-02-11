@@ -14,16 +14,7 @@
     <title>KonfinityPost</title>
   </head>
   <body>
-    <nav>
-      <div id="nav-logo">
-        <p class="logo"><i class="fas fa-envelope-open"></i>KonfinityPost</p>
-      </div>
-      <div id="nav-menu">
-        <a href="/" class="menu-button">Campaigns</a>
-        <a href="/lists" class="menu-button">Lists</a>
-        <a href="" class="menu-button">Reports</a>
-      </div>
-    </nav>
+    <% include nav/campaign %>
 
     <section id="main-section">
       <div id="sidebar">
@@ -34,8 +25,8 @@
           Create a Campaign
         </button>
         <button class="panel-button">Send a Campaign</button>
-        <a href="" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
-        <a href=""><i class="fas fa-check-circle"></i>Completed Queue</a>
+        <a href="/" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
+        <a href="/campaigns/completed"><i class="fas fa-check-circle"></i>Completed Queue</a href="/campaigns/completed">
       </div>
       <div id="main-content">
         <h1><i class="fas fa-envelope"></i>Create an Email Campaign</h1>
