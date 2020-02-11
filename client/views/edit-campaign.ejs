@@ -47,12 +47,22 @@
         >
           <div>
             <label for="name">Email Campaign Name</label>
-            <input type="text" name="name" value="<%= campaign[0].name %>" />
+            <input
+              type="text"
+              name="name"
+              value="<%= campaign[0].name %>"
+              required
+            />
           </div>
 
           <div>
             <label for="format">Email Campaign Format</label>
-            <select name="format" id="format" value="<%= campaign[0].format %>">
+            <select
+              name="format"
+              id="format"
+              value="<%= campaign[0].format %>"
+              required
+            >
               <option value="html">HTML (Recommended)</option>
               <option value="markdown">Markdown</option>
             </select>
@@ -64,6 +74,7 @@
               type="text"
               name="subject"
               value="<%= campaign[0].subject %>"
+              required
             />
           </div>
 
@@ -73,11 +84,12 @@
               type="file"
               name="file"
               value="<%= campaign[0].file_url %>"
+              required
             />
           </div>
 
           <div>
-            <button class="action-button">Submit</button>
+            <button class="action-button" required>Submit</button>
           </div>
         </form>
       </div>

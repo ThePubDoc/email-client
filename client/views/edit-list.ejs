@@ -29,43 +29,44 @@
       <div id="sidebar">
         <button
           class="panel-button-large"
-          onclick="window.location.href = '/campaign'"
+          onclick="window.location.href = '/lists/create'"
         >
-          Create a Campaign
+          Add New List
         </button>
-        <button class="panel-button">Send a Campaign</button>
-        <a href="" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
-        <a href=""><i class="fas fa-check-circle"></i>Completed Queue</a>
+        <a href="/" class="current"><i class="fas fa-folder"></i>Lists</a>
+
+        <div class="sidebar-options">
+          <p class="subject">List Options</p>
+          <button class="option-button">
+            <i class="fas fa-search"></i>Search Contacts
+          </button>
+          <button class="option-button">
+            <i class="fas fa-trash"></i>Remove Contacts
+          </button>
+        </div>
       </div>
       <div id="main-content">
         <h1><i class="fas fa-envelope"></i>Create an Email Campaign</h1>
-        <p class="subject">Email Campaign Details</p>
-        <form
-          action="/campaigns/create"
-          method="POST"
-          enctype="multipart/form-data"
-        >
+        <p class="subject">List Details</p>
+        <form action="/lists/edit" method="POST" enctype="multipart/form-data">
           <div>
-            <label for="name">Email Campaign Name</label>
-            <input type="text" name="name" required />
-          </div>
-
-          <div>
-            <label for="format">Email Campaign Format</label>
-            <select name="format" id="format" required>
-              <option value="html">HTML (Recommended)</option>
-              <option value="markdown">Markdown</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="subject">Email Subject</label>
-            <input type="text" name="subject" required />
+            <label for="name">List Name</label>
+            <input
+              type="text"
+              name="name"
+              value="<%= list[0].name %>"
+              required
+            />
           </div>
 
           <div>
             <label for="file">Upload Content</label>
-            <input type="file" name="file" required />
+            <input
+              type="file"
+              name="file"
+              value="<%= list[0].format %>"
+              required
+            />
           </div>
 
           <div>
