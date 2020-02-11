@@ -1,4 +1,5 @@
 const Campaign = require("../models/campaign");
+const List = require("../models/list");
 const multer = require("multer");
 
 async function index(req, res) {
@@ -64,11 +65,24 @@ function copy(req, res) {
   });
 }
 
+function createList(req,res){
+  res.render("create-list");
+}
+
+async function list(req,res){
+  const lists = await List.find({});
+  res.render("list" ,{
+    lists
+  })
+}
+
 module.exports = {
   index,
   campaign,
   edit,
   del,
   copy,
-  completed_campaigns
+  completed_campaigns,
+  createList,
+  list,
 };
