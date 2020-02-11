@@ -33,7 +33,7 @@
         >
           Add New List
         </button>
-        <a href="/" class="current"><i class="fas fa-folder"></i>Lists</a>
+        <a href="/lists" class="current"><i class="fas fa-folder"></i>Lists</a>
 
         <div class="sidebar-options">
           <p class="subject">List Options</p>
@@ -92,8 +92,12 @@
                 <a href="">[view contacts]</a>
                 <a href="">[add contacts]</a>
                 <a href="/lists/copy?id=<%= lists[list]._id %>">[copy]</a>
-                <a href="/lists/edit?id=<%= lists[list]._id %>" class="edit">[edit]</a>
-                <a href="/lists/delete?id=<%= lists[list]._id %>" class="delete">[delete]</a>
+                <a href="/lists/edit?id=<%= lists[list]._id %>" class="edit"
+                  >[edit]</a
+                >
+                <a href="/lists/delete?id=<%= lists[list]._id %>" class="delete"
+                  >[delete]</a
+                >
               </div>
             </td>
             <td>
