@@ -46,14 +46,11 @@
         >
       </div>
       <div id="main-content">
-        <h1><i class="fas fa-envelope"></i>Email Campaigns</h1>
+        <h1><i class="fas fa-check-circle"></i>Completed Campaigns</h1>
         <div id="pagination-bar">
           <div id="left-bar" class="sub-bar">
             <input type="checkbox" name="" id="" />
-            <select name="" id="">
-              <option value="">Choose an Action</option>
-            </select>
-            <button>Go</button>
+            <button>Deleted Selected</button>
           </div>
           <div id="right-bar" class="sub-bar">
             <select name="" id="">
@@ -74,50 +71,28 @@
           <% for (campaign in campaigns){ %>
 
           <tr>
-            <td><input class="table-ip" type="checkbox" name="" id="" /></td>
+            <td class="fixed-width-3">
+              <input class="table-ip" type="checkbox" name="" id="" />
+            </td>
             <td class="fixed-width-14">
               <p class="subject"><%= campaigns[campaign].name %></p>
+              <p class="smaller"><%= campaigns[campaign].subject %></p>
+            </td>
+            <td>
+              <!--  <%= campaigns[campaign].list %> -->
+              <p>Ambassador List</p>
               <div class="smaller hover-only">
                 <a href="">[view]</a>
-                <a href="">[send]</a>
-                <a href="/copy?id=<%= campaigns[campaign]._id %>">[copy]</a>
-                <a href="/edit?id=<%= campaigns[campaign]._id %>" class="edit"
-                  >[edit]</a
-                >
-                <a
-                  href="/delete?id=<%= campaigns[campaign]._id %>"
-                  class="delete"
-                  >[delete]</a
-                >
+                <a href="" class="delete">[delete]</a>
               </div>
             </td>
             <td>
-              <p><%= campaigns[campaign].subject %></p>
-              <p class="smaller create-date">
-                Created on <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
-                campaigns[campaign].createdAt.getFullYear(); %>
-              </p>
-            </td>
-            <td>
-              <p>(Sent to 3/3)</p>
+              <p>Completed On</p>
               <p class="smaller sent-date">
-                Last Sent <%=campaigns[campaign].createdAt.getDate() + '/'+
+                <%=campaigns[campaign].createdAt.getDate() + '/'+
                 campaigns[campaign].createdAt.getMonth() + '/'+
                 campaigns[campaign].createdAt.getFullYear(); %>
               </p>
-            </td>
-            <td>
-              <div class="status">
-                <i class="fas fa-circle smaller"></i>
-                <p class="smaller">state</p>
-              </div>
-            </td>
-            <td>
-              <div class="status">
-                <i class="fas fa-circle smaller"></i>
-                <p class="smaller">archive</p>
-              </div>
             </td>
           </tr>
 

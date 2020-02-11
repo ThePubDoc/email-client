@@ -334,7 +334,7 @@ body table.data-container tr {
 }
 
 body table.data-container tr td input.table-ip {
-  margin: 0.7rem;
+  margin: 0.7rem 0.6rem;
 }
 
 body table.data-container tr td .smaller {
@@ -383,6 +383,10 @@ body table.data-container tr td div.status i {
 
 body table.data-container tr td.fixed-width-14 {
   width: 14rem;
+}
+
+body table.data-container tr td.fixed-width-3 {
+  width: 3rem;
 }
 
 body table.data-container tr .hover-only {

@@ -97,6 +97,10 @@ section#main-section div#sidebar a.current {
   border-left: 5px solid #c72926;
 }
 
+section#main-section div#sidebar a:hover {
+  color: #767a7f;
+}
+
 section#main-section div#main-content {
   padding: 0 1rem;
 }

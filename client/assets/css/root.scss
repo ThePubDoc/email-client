@@ -270,7 +270,7 @@ body {
 
       td {
         input.table-ip {
-          margin: 0.7rem;
+          margin: 0.7rem 0.6rem;
         }
         .smaller {
           font-size: smaller;
@@ -302,10 +302,14 @@ body {
             color: #83ff45;
           }
         }
-      }
 
-      td.fixed-width-14 {
-        width: 14rem;
+        &.fixed-width-14 {
+          width: 14rem;
+        }
+
+        &.fixed-width-3 {
+          width: 3rem;
+        }
       }
 
       .hover-only {

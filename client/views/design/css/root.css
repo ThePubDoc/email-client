@@ -333,7 +333,7 @@ body .data-container tr {
 }
 
 body .data-container tr td input.table-ip {
-  margin: 0.7rem;
+  margin: 0.7rem 0.6rem;
 }
 
 body .data-container tr td .smaller {
