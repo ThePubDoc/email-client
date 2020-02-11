@@ -17,7 +17,7 @@ function createList(req, res) {
 
 function edit_list(req,res){
   const id = req.query.id;
-  const {name, format, subject} = req.body;
+  const {name} = req.body;
   List.findOneAndUpdate(
       {_id : id},
       {name,},

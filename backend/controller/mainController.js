@@ -1,6 +1,8 @@
 const Campaign = require("../models/campaign");
 const List = require("../models/list");
 const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
 
 async function index(req, res) {
   const campaigns = await Campaign.find({});
@@ -71,7 +73,17 @@ function view_campaign(req,res){
       console.log("Error in viewing campaign file")
     }
     else{
-      console.log(doc)
+      const file_url = path.join(__dirname ,"../../" , doc.file_url);
+      // const file_url = "../"+ doc.file_url;
+      // console.log(file_url)
+      fs.readFile(file_url, "utf8", (err,data)=>{
+        if(err){
+          console.log(err)
+        }
+        else{
+          res.send(data)
+        }
+      })
     }
   })
 }
