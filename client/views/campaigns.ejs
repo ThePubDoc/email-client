@@ -14,22 +14,7 @@
     <title>KonfinityPost</title>
   </head>
   <body>
-    <nav>
-      <div id="nav-logo">
-        <p class="logo"><i class="fas fa-envelope-open"></i>KonfinityPost</p>
-        <!-- <div id="user-info">
-          <a href="">Konfinity,</a>
-          <a href="">Settings</a>
-          <a>|</a>
-          <a href="">Logout</a>
-        </div> -->
-      </div>
-      <div id="nav-menu">
-        <a href="/" class="menu-button current">Campaigns</a>
-        <a href="/lists" class="menu-button">Lists</a>
-        <a href="" class="menu-button">Reports</a>
-      </div>
-    </nav>
+    <% include nav/campaign %>
 
     <section id="main-section">
       <div id="sidebar">
@@ -80,7 +65,9 @@
             <td class="fixed-width-14">
               <p class="subject"><%= campaigns[campaign].name %></p>
               <div class="smaller hover-only">
-                <a href="/campaigns/view?id=<%= campaigns[campaign]._id %>"
+                <a
+                  target="blank"
+                  href="/campaigns/view?id=<%= campaigns[campaign]._id %>"
                   >[view]</a
                 >
                 <a href="">[send]</a>

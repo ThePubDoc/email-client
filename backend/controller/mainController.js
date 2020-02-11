@@ -7,7 +7,7 @@ const csv = require('csv-parser');
 
 async function index(req, res) {
   const campaigns = await Campaign.find({});
-  res.render("index", {
+  res.render("campaigns", {
     campaigns
   });
 }
@@ -67,26 +67,24 @@ function copy_campaign(req, res) {
   });
 }
 
-function view_campaign(req,res){
+function view_campaign(req, res) {
   const id = req.query.id;
-  Campaign.findOne({_id : id}).exec((err,doc)=>{
-    if(err){
-      console.log("Error in viewing campaign file")
-    }
-    else{
-      const file_url = path.join(__dirname ,"../../" , doc.file_url);
+  Campaign.findOne({ _id: id }).exec((err, doc) => {
+    if (err) {
+      console.log("Error in viewing campaign file");
+    } else {
+      const file_url = path.join(__dirname, "../../", doc.file_url);
       // const file_url = "../"+ doc.file_url;
       // console.log(file_url)
-      fs.readFile(file_url, "utf8", (err,data)=>{
-        if(err){
-          console.log(err)
+      fs.readFile(file_url, "utf8", (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(data);
         }
-        else{
-          res.send(data)
-        }
-      })
+      });
     }
-  })
+  });
 }
 
 function create_list(req, res) {
@@ -116,7 +114,7 @@ function edit_list(req, res) {
 
 function del_list(req, res) {
   const id = req.query.id;
-  console.log(id)
+  console.log(id);
   List.findOneAndDelete({ _id: id }).exec((err, list) => {
     if (err) {
       console.log("Error in deleting");

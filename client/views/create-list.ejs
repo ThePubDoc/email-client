@@ -14,16 +14,7 @@
     <title>KonfinityPost</title>
   </head>
   <body>
-    <nav>
-      <div id="nav-logo">
-        <p class="logo"><i class="fas fa-envelope-open"></i>KonfinityPost</p>
-      </div>
-      <div id="nav-menu">
-        <a href="/" class="menu-button">Campaigns</a>
-        <a href="/lists" class="menu-button">Lists</a>
-        <a href="" class="menu-button">Reports</a>
-      </div>
-    </nav>
+    <% include nav/list %>
 
     <section id="main-section">
       <div id="sidebar">
@@ -33,7 +24,7 @@
         >
           Add New List
         </button>
-        <a href="/lists" class="current"><i class="fas fa-folder"></i>Lists</a>
+        <a href="/lists"><i class="fas fa-folder"></i>Lists</a>
 
         <div class="sidebar-options">
           <p class="subject">List Options</p>
@@ -64,7 +55,7 @@
           </div>
 
           <div>
-            <button class="action-button" required>Submit</button>
+            <button class="action-button">Submit</button>
           </div>
         </form>
       </div>

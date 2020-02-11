@@ -367,6 +367,11 @@ body {
       }
     }
   }
+
+  .scrollable-vertical {
+    overflow-y: scroll;
+    height: 400px;
+  }
 }
 
 //end of body tag
