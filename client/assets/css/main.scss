@@ -88,6 +88,18 @@ section#main-section {
         border-left: 5px solid map-get($colors, punch);
       }
     }
+
+    p {
+      font-size: 0.9rem;
+      color: map-get($colors, txt);
+    }
+
+    button.option {
+      border: none;
+      background: none;
+      font-size: 0.9rem;
+      color: map-get($colors, txt);
+    }
   }
 
   div#main-content {

@@ -34,12 +34,16 @@
           Add New List
         </button>
         <a href="/" class="current"><i class="fas fa-folder"></i>Lists</a>
-      </div>
 
-      <div class="sidebar-options">
-        <p class="subject">List Options</p>
-        <a href=""><i class="fas fa-search"></i>Search Contacts</a>
-        <a href=""><i class="fas fa-delete"></i>Remove Contacts</a>
+        <div class="sidebar-options">
+          <p class="subject">List Options</p>
+          <button class="option">
+            <i class="fas fa-search"></i>Search Contacts
+          </button>
+          <button class="option">
+            <i class="fas fa-delete"></i>Remove Contacts
+          </button>
+        </div>
       </div>
 
       <div id="main-content">
@@ -87,15 +91,9 @@
               <div class="smaller hover-only">
                 <a href="">[view contacts]</a>
                 <a href="">[add contacts]</a>
-                <a href="/copy?id=<%= campaigns[campaign]._id %>">[copy]</a>
-                <a href="/edit?id=<%= campaigns[campaign]._id %>" class="edit"
-                  >[edit]</a
-                >
-                <a
-                  href="/delete?id=<%= campaigns[campaign]._id %>"
-                  class="delete"
-                  >[delete]</a
-                >
+                <a href="">[copy]</a>
+                <a href="" class="edit">[edit]</a>
+                <a href="" class="delete">[delete]</a>
               </div>
             </td>
             <td>
