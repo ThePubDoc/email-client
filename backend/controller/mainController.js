@@ -16,25 +16,25 @@ async function completed_campaigns(req, res) {
   });
 }
 
-function campaign(req, res) {
-  res.render("campaign");
+function create_campaign(req, res) {
+  res.render("create-campaign");
 }
 
-function edit(req, res) {
+function edit_campaign(req, res) {
   const id = req.query.id;
 
   Campaign.find({ _id: id }).exec(function(err, campaign) {
     if (err) {
       console.log("Error in fetching id");
     } else {
-      res.render("edit", {
+      res.render("edit-campaign", {
         campaign: campaign
       });
     }
   });
 }
 
-function del(req, res) {
+function del_campaign(req, res) {
   const id = req.query.id;
   Campaign.findOneAndDelete({ _id: id }).exec((err, campaign) => {
     if (err) {
@@ -45,7 +45,7 @@ function del(req, res) {
   });
 }
 
-function copy(req, res) {
+function copy_campaign(req, res) {
   const id = req.query.id;
   console.log(id);
   Campaign.findOne({ _id: id }).exec((err, doc) => {
@@ -65,24 +65,24 @@ function copy(req, res) {
   });
 }
 
-function createList(req,res){
+function create_list(req, res) {
   res.render("create-list");
 }
 
-async function list(req,res){
+async function lists(req, res) {
   const lists = await List.find({});
-  res.render("list" ,{
+  res.render("lists", {
     lists
-  })
+  });
 }
 
 module.exports = {
   index,
-  campaign,
-  edit,
-  del,
-  copy,
   completed_campaigns,
-  createList,
-  list,
+  create_campaign,
+  edit_campaign,
+  del_campaign,
+  copy_campaign,
+  create_list,
+  lists
 };

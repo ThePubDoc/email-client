@@ -26,7 +26,7 @@
       </div>
       <div id="nav-menu">
         <a href="/" class="menu-button current">Campaigns</a>
-        <a href="" class="menu-button">Lists</a>
+        <a href="/lists" class="menu-button">Lists</a>
         <a href="" class="menu-button">Reports</a>
       </div>
     </nav>
@@ -35,7 +35,7 @@
       <div id="sidebar">
         <button
           class="panel-button-large"
-          onclick="window.location.href = '/campaign'"
+          onclick="window.location.href = '/campaigns/create'"
         >
           Create a Campaign
         </button>
@@ -82,12 +82,16 @@
               <div class="smaller hover-only">
                 <a href="">[view]</a>
                 <a href="">[send]</a>
-                <a href="/copy?id=<%= campaigns[campaign]._id %>">[copy]</a>
-                <a href="/edit?id=<%= campaigns[campaign]._id %>" class="edit"
+                <a href="/campaigns/copy?id=<%= campaigns[campaign]._id %>"
+                  >[copy]</a
+                >
+                <a
+                  href="/campaigns/edit?id=<%= campaigns[campaign]._id %>"
+                  class="edit"
                   >[edit]</a
                 >
                 <a
-                  href="/delete?id=<%= campaigns[campaign]._id %>"
+                  href="/campaigns/delete?id=<%= campaigns[campaign]._id %>"
                   class="delete"
                   >[delete]</a
                 >

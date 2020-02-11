@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/root.css" />
-    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -19,8 +19,8 @@
         <p class="logo"><i class="fas fa-envelope-open"></i>KonfinityPost</p>
       </div>
       <div id="nav-menu">
-        <a href="/" class="menu-button current">Campaigns</a>
-        <a href="/lists" class="menu-button">Lists</a>
+        <a href="/" class="menu-button">Campaigns</a>
+        <a href="" class="menu-button current">Lists</a>
         <a href="" class="menu-button">Reports</a>
       </div>
     </nav>
@@ -29,22 +29,28 @@
       <div id="sidebar">
         <button
           class="panel-button-large"
-          onclick="window.location.href = '/campaigns/create'"
+          onclick="window.location.href = '/createlist'"
         >
-          Create a Campaign
+          Add New List
         </button>
-        <button class="panel-button">Send a Campaign</button>
-        <a href="/"><i class="fas fa-envelope"></i>Campaigns</a>
-        <a href="/campaigns/completed" class="current"
-          ><i class="fas fa-check-circle"></i>Completed Queue</a
-        >
+        <a href="/" class="current"><i class="fas fa-folder"></i>Lists</a>
       </div>
+
+      <div class="sidebar-options">
+        <p class="subject">List Options</p>
+        <a href=""><i class="fas fa-search"></i>Search Contacts</a>
+        <a href=""><i class="fas fa-delete"></i>Remove Contacts</a>
+      </div>
+
       <div id="main-content">
-        <h1><i class="fas fa-check-circle"></i>Completed Campaigns</h1>
+        <h1><i class="fas fa-folder"></i>Lists</h1>
         <div id="pagination-bar">
           <div id="left-bar" class="sub-bar">
             <input type="checkbox" name="" id="" />
-            <button>Deleted Selected</button>
+            <select name="" id="">
+              <option value="">Choose an Action</option>
+            </select>
+            <button>Go</button>
           </div>
           <div id="right-bar" class="sub-bar">
             <select name="" id="">
@@ -68,22 +74,34 @@
             <td class="fixed-width-3">
               <input class="table-ip" type="checkbox" name="" id="" />
             </td>
-            <td class="fixed-width-14">
-              <p class="subject"><%= campaigns[campaign].name %></p>
-              <p class="smaller"><%= campaigns[campaign].subject %></p>
-            </td>
+
             <td>
-              <!--  <%= campaigns[campaign].list %> -->
-              <p>Ambassador List</p>
+              <p class="subject">0</p>
+              <p class="smaller">
+                total contacts
+              </p>
+            </td>
+
+            <td class="fixed-width-14">
+              <p class="subject">Campus Ambassador</p>
               <div class="smaller hover-only">
-                <a href="">[view]</a>
-                <a href="" class="delete">[delete]</a>
+                <a href="">[view contacts]</a>
+                <a href="">[add contacts]</a>
+                <a href="/copy?id=<%= campaigns[campaign]._id %>">[copy]</a>
+                <a href="/edit?id=<%= campaigns[campaign]._id %>" class="edit"
+                  >[edit]</a
+                >
+                <a
+                  href="/delete?id=<%= campaigns[campaign]._id %>"
+                  class="delete"
+                  >[delete]</a
+                >
               </div>
             </td>
             <td>
-              <p>Completed On</p>
-              <p class="smaller sent-date">
-                <%=campaigns[campaign].createdAt.getDate() + '/'+
+              <p>Created On</p>
+              <p class="smaller">
+                Created on <%=campaigns[campaign].createdAt.getDate() + '/'+
                 campaigns[campaign].createdAt.getMonth() + '/'+
                 campaigns[campaign].createdAt.getFullYear(); %>
               </p>
