@@ -317,6 +317,17 @@ body .action-button:hover {
   cursor: pointer;
 }
 
+body .option-button {
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  color: #767a7f;
+}
+
+body .option-button:hover {
+  color: #4888d8;
+}
+
 body table.data-container {
   margin: 2rem 0;
   width: 100%;
@@ -379,14 +390,6 @@ body table.data-container tr td div.status {
 
 body table.data-container tr td div.status i {
   color: #83ff45;
-}
-
-body table.data-container tr td.fixed-width-14 {
-  width: 14rem;
-}
-
-body table.data-container tr td.fixed-width-3 {
-  width: 3rem;
 }
 
 body table.data-container tr .hover-only {

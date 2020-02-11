@@ -94,11 +94,11 @@ section#main-section {
       color: map-get($colors, txt);
     }
 
-    button.option {
-      border: none;
-      background: none;
-      font-size: 0.9rem;
-      color: map-get($colors, txt);
+    .sidebar-options {
+      margin: 1.5rem 0 0 0.8rem;
+      .subject {
+        border-bottom: 1px solid map-get($colors, border);
+      }
     }
   }
 
@@ -158,6 +158,24 @@ section#main-section {
           font-size: 0.7rem;
           padding: 0.1rem;
           font-weight: 100;
+        }
+      }
+    }
+
+    .data-container {
+      tr {
+        td {
+          &.fixed-width-14 {
+            min-width: 14rem;
+          }
+
+          &.fixed-width-3 {
+            width: 3rem;
+          }
+
+          &.fixed-width-22 {
+            min-width: 22rem;
+          }
         }
       }
     }

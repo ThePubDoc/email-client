@@ -106,11 +106,12 @@ section#main-section div#sidebar p {
   color: #767a7f;
 }
 
-section#main-section div#sidebar button.option {
-  border: none;
-  background: none;
-  font-size: 0.9rem;
-  color: #767a7f;
+section#main-section div#sidebar .sidebar-options {
+  margin: 1.5rem 0 0 0.8rem;
+}
+
+section#main-section div#sidebar .sidebar-options .subject {
+  border-bottom: 1px solid #c4c4c4;
 }
 
 section#main-section div#main-content {
@@ -185,5 +186,17 @@ section#main-section div#main-content div#pagination-bar .sub-bar button {
   font-size: 0.7rem;
   padding: 0.1rem;
   font-weight: 100;
+}
+
+section#main-section div#main-content .data-container tr td.fixed-width-14 {
+  min-width: 14rem;
+}
+
+section#main-section div#main-content .data-container tr td.fixed-width-3 {
+  width: 3rem;
+}
+
+section#main-section div#main-content .data-container tr td.fixed-width-22 {
+  min-width: 22rem;
 }
 /*# sourceMappingURL=main.css.map */

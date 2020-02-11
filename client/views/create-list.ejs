@@ -27,12 +27,23 @@
 
     <section id="main-section">
       <div id="sidebar">
-        <button class="panel-button-large" onclick="window.location.href = ''">
-          Create a Campaign
+        <button
+          class="panel-button-large"
+          onclick="window.location.href = '/lists/create'"
+        >
+          Add New List
         </button>
-        <button class="panel-button">Send a Campaign</button>
-        <a href="" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
-        <a href=""><i class="fas fa-check-circle"></i>Completed Queue</a>
+        <a href="/" class="current"><i class="fas fa-folder"></i>Lists</a>
+
+        <div class="sidebar-options">
+          <p class="subject">List Options</p>
+          <button class="option-button">
+            <i class="fas fa-search"></i>Search Contacts
+          </button>
+          <button class="option-button">
+            <i class="fas fa-trash"></i>Remove Contacts
+          </button>
+        </div>
       </div>
       <div id="main-content">
         <h1><i class="fas fa-envelope"></i>Create an Email Campaign</h1>
