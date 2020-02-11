@@ -467,4 +467,9 @@ body form div button {
   margin: 0.5rem 0;
   width: 100px;
 }
+
+body .scrollable-vertical {
+  overflow-y: scroll;
+  height: 400px;
+}
 /*# sourceMappingURL=root.css.map */

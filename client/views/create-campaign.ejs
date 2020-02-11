@@ -20,13 +20,15 @@
       <div id="sidebar">
         <button
           class="panel-button-large"
-          onclick="window.location.href = '/campaign'"
+          onclick="window.location.href = '/campaigns/create'"
         >
           Create a Campaign
         </button>
         <button class="panel-button">Send a Campaign</button>
-        <a href="/" class="current"><i class="fas fa-envelope"></i>Campaigns</a>
-        <a href="/campaigns/completed"><i class="fas fa-check-circle"></i>Completed Queue</a href="/campaigns/completed">
+        <a href="/"><i class="fas fa-envelope"></i>Campaigns</a>
+        <a href="/campaigns/completed"
+          ><i class="fas fa-check-circle"></i>Completed Queue</a
+        >
       </div>
       <div id="main-content">
         <h1><i class="fas fa-envelope"></i>Create an Email Campaign</h1>
@@ -60,7 +62,7 @@
           </div>
 
           <div>
-            <button class="action-button" required>Submit</button>
+            <button class="action-button">Submit</button>
           </div>
         </form>
       </div>
