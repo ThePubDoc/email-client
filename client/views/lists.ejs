@@ -37,11 +37,11 @@
 
         <div class="sidebar-options">
           <p class="subject">List Options</p>
-          <button class="option">
+          <button class="option-button">
             <i class="fas fa-search"></i>Search Contacts
           </button>
-          <button class="option">
-            <i class="fas fa-delete"></i>Remove Contacts
+          <button class="option-button">
+            <i class="fas fa-trash"></i>Remove Contacts
           </button>
         </div>
       </div>
@@ -86,7 +86,7 @@
               </p>
             </td>
 
-            <td class="fixed-width-14">
+            <td class="fixed-width-22">
               <p class="subject"><%= lists[list].name %></p>
               <div class="smaller hover-only">
                 <a href="">[view contacts]</a>
@@ -99,7 +99,7 @@
             <td>
               <p>Created On</p>
               <p class="smaller">
-                Created on <%=lists[list].createdAt.getDate() + '/'+
+                <%=lists[list].createdAt.getDate() + '/'+
                 lists[list].createdAt.getMonth() + '/'+
                 lists[list].createdAt.getFullYear(); %>
               </p>

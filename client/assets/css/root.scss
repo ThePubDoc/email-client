@@ -255,6 +255,16 @@ body {
     }
   }
 
+  .option-button {
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    color: map-get($colors, txt);
+    &:hover {
+      color: map-get($colors, accent);
+    }
+  }
+
   table.data-container {
     margin: 2rem 0;
     width: 100%;
@@ -301,14 +311,6 @@ body {
           i {
             color: #83ff45;
           }
-        }
-
-        &.fixed-width-14 {
-          width: 14rem;
-        }
-
-        &.fixed-width-3 {
-          width: 3rem;
         }
       }
 
