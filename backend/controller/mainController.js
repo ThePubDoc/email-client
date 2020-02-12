@@ -158,6 +158,13 @@ async function reports(req, res) {
   });
 }
 
+async function listreports(req, res) {
+  const lists = await List.find({});
+  res.render("listreports", {
+    lists
+  });
+}
+
 module.exports = {
   index,
   completed_campaigns,
@@ -172,5 +179,6 @@ module.exports = {
   del_list,
   copy_list,
   send_campaign,
-  reports
+  reports,
+  listreports
 };

@@ -18,8 +18,8 @@
 
     <section id="main-section">
       <div id="sidebar">
-        <a href="/reports" class="current">&gt; Campaign</a>
-        <a href="/listreports">&gt; List</a>
+        <a href="/reports">&gt; Campaign</a>
+        <a href="/listreports" class="current">&gt; List</a>
       </div>
 
       <div id="main-content">
@@ -48,7 +48,7 @@
         </div>
 
         <table class="data-container">
-          <%for(campaign in campaigns){%>
+          <%for(list in lists){%>
 
           <tr>
             <td class="fixed-width-3">
@@ -87,11 +87,11 @@
             </td>
 
             <td class="fixed-width-14">
-              <p><%=campaigns[campaign].name%></p>
+              <p><%=lists[list].name%></p>
               <p class="smaller create-date">
-                <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
-                campaigns[campaign].createdAt.getFullYear(); %>
+                <%=lists[list].createdAt.getDate() + '/'+
+                lists[list].createdAt.getMonth() + '/'+
+                lists[list].createdAt.getFullYear(); %>
               </p>
             </td>
           </tr>
