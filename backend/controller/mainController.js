@@ -1,5 +1,6 @@
 const Campaign = require("../models/campaign");
 const List = require("../models/list");
+const SentCampiagn = require("../models/sent-campaign");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
@@ -18,6 +19,13 @@ async function send_campaign(req, res) {
   res.render("send-campaign", {
     lists,
     campaigns
+  });
+}
+
+async function sent_campaign(req, res) {
+  const sentCampaigns = await SentCampiagn.find({});
+  res.render("sent-campaign", {
+    sentCampaigns
   });
 }
 
@@ -226,6 +234,7 @@ module.exports = {
   view_list,
   add_contact,
   send_campaign,
+  sent_campaign,
   reports,
   listreports
 };

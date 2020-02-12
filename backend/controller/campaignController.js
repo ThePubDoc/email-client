@@ -55,9 +55,8 @@ async function send(req, res) {
 
   const sent_campaign_instance = new SentCampiagn({campaign, campaign_subject, sender, sender_email, reply_email, lists, total_contacts})
   sent_campaign_instance.save();
-  res.render("sent-campaign", {
-    sent_campaign_instance
-  })
+  console.log(sent_campaign_instance);
+  res.redirect("/campaigns/sent?id="+sent_campaign_instance._id);
 }
 
 module.exports = {
