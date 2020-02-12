@@ -12,4 +12,4 @@ const sentCampaignSchema = new schema({
     total_contacts : {type:Number, required: true}
 },{timestamps : true})
 
-module.exports = sent_campaign = mongoose.model("sent-campaign" , sentCampaignSchema);
+module.exports = sent_campaign = mongoose.model("sent_campaign" , sentCampaignSchema);
