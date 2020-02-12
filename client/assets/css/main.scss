@@ -33,7 +33,7 @@ nav {
         padding: 0.5rem 0.3rem;
       }
     }
-    p.logo {
+    a.logo {
       margin: 0;
       font-size: 1.3rem;
       color: white;
@@ -132,6 +132,7 @@ section#main-section {
       justify-content: space-between;
       align-items: center;
       padding: 0 0.3rem;
+      border-radius: 5px;
 
       p {
         font-size: 0.8rem;
@@ -159,6 +160,19 @@ section#main-section {
           padding: 0.1rem;
           font-weight: 100;
         }
+      }
+    }
+
+    div.page-info {
+      border-radius: 5px;
+      background-color: #dfeaff;
+      padding: 0.3rem;
+      margin-bottom: 1.5rem;
+
+      p {
+        margin: 0;
+        font-style: italic;
+        font-size: 0.8rem;
       }
     }
 

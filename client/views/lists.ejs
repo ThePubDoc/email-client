@@ -22,9 +22,11 @@
           class="panel-button-large"
           onclick="window.location.href = '/lists/create'"
         >
-          Add New List
+          Add New Contact List
         </button>
-        <a href="/lists" class="current"><i class="fas fa-folder"></i>Lists</a>
+        <a href="/lists" class="current"
+          ><i class="fas fa-folder"></i>Contact List</a
+        >
 
         <div class="sidebar-options">
           <p class="subject">List Options</p>
@@ -38,7 +40,7 @@
       </div>
 
       <div id="main-content">
-        <h1><i class="fas fa-folder"></i>Lists</h1>
+        <h1><i class="fas fa-folder"></i>Contact List</h1>
         <div id="pagination-bar">
           <div id="left-bar" class="sub-bar">
             <input type="checkbox" name="" id="" />
@@ -80,7 +82,9 @@
             <td class="fixed-width-22">
               <p class="subject"><%= lists[list].name %></p>
               <div class="smaller hover-only">
-                <a href="/lists/view?id=<%= lists[list]._id %>">[view contacts]</a>
+                <a href="/lists/view?id=<%= lists[list]._id %>"
+                  >[view contacts]</a
+                >
                 <a href="">[add contacts]</a>
                 <a href="/lists/copy?id=<%= lists[list]._id %>">[copy]</a>
                 <a href="/lists/edit?id=<%= lists[list]._id %>" class="edit"

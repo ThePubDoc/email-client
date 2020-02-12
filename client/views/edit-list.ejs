@@ -22,9 +22,11 @@
           class="panel-button-large"
           onclick="window.location.href = '/lists/create'"
         >
-          Add New List
+          Add New Contact List
         </button>
-        <a href="/lists" class="current"><i class="fas fa-folder"></i>Lists</a>
+        <a href="/lists" class="current"
+          ><i class="fas fa-folder"></i>Contact List</a
+        >
 
         <div class="sidebar-options">
           <p class="subject">List Options</p>
@@ -39,7 +41,11 @@
       <div id="main-content">
         <h1><i class="fas fa-folder"></i>Edit List</h1>
         <p class="subject">List Details</p>
-        <form action="/lists/edit?id=<%= list[0]._id %>" method="POST" enctype="multipart/form-data">
+        <form
+          action="/lists/edit?id=<%= list[0]._id %>"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <div>
             <label for="name">List Name</label>
             <input
