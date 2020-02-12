@@ -40,8 +40,6 @@ router.route("/campaigns/copy").get(mainController.copy_campaign);
 router.route("/campaigns/view").get(mainController.view_campaign);
 router.route("/campaigns/completed").get(mainController.completed_campaigns);
 router.route("/campaigns/send").get(mainController.send_campaign);
-router.route("/reports").get(mainController.reports);
-router.route("/listreports").get(mainController.listreports);
 
 router.route("/lists").get(mainController.lists);
 router.route("/lists/create").get(mainController.create_list);
@@ -49,12 +47,16 @@ router.route("/lists/edit").get(mainController.edit_list);
 router.route("/lists/delete").get(mainController.del_list);
 router.route("/lists/copy").get(mainController.copy_list);
 
+router.route("/reports").get(mainController.reports);
+router.route("/listreports").get(mainController.listreports);
+
 router
   .route("/campaigns/create")
   .post(campaignFiles.single("file"), campaignController.index);
 router
   .route("/campaigns/edit")
   .post(campaignFiles.single("file"), campaignController.edit);
+router.route("/campaigns/send").post(campaignController.send);
 
 router
   .route("/lists/create")

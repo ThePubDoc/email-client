@@ -78,8 +78,8 @@
             <td>
               <p>Completed On</p>
               <p class="smaller sent-date">
-                <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
+                <%let month = campaigns[campaign].createdAt.getMonth()+1%>
+                <%=campaigns[campaign].createdAt.getDate() + '/'+ month + '/'+
                 campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>

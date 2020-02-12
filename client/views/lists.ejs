@@ -94,8 +94,8 @@
             <td>
               <p>Created On</p>
               <p class="smaller">
-                <%=lists[list].createdAt.getDate() + '/'+
-                lists[list].createdAt.getMonth() + '/'+
+                <%let month = lists[list].createdAt.getMonth()+1%>
+                <%=lists[list].createdAt.getDate() + '/'+ month + '/'+
                 lists[list].createdAt.getFullYear(); %>
               </p>
             </td>

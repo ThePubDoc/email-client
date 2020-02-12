@@ -23,7 +23,7 @@
       </div>
 
       <div id="main-content">
-        <h1><i class="fas fa-folder"></i>Campaign Reports</h1>
+        <h1><i class="fas fa-clipboard-list"></i>Campaign Reports</h1>
         <div id="pagination-bar">
           <div id="left-bar" class="sub-bar">
             <input type="checkbox" name="" id="" />
@@ -89,8 +89,8 @@
             <td class="fixed-width-14">
               <p><%=campaigns[campaign].name%></p>
               <p class="smaller create-date">
-                <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
+                <%let month = campaigns[campaign].createdAt.getMonth()+1%>
+                <%=campaigns[campaign].createdAt.getDate() + '/'+ month + '/'+
                 campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>

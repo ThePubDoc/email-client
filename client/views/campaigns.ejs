@@ -96,17 +96,17 @@
             <td>
               <p><%= campaigns[campaign].subject %></p>
               <p class="smaller create-date">
+                <%let cmonth = campaigns[campaign].createdAt.getMonth()+1%>
                 Created on <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
-                campaigns[campaign].createdAt.getFullYear(); %>
+                cmonth+ '/'+ campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>
             <td>
               <p>(Sent to 3/3)</p>
               <p class="smaller sent-date">
-                Last Sent <%=campaigns[campaign].createdAt.getDate() + '/'+
-                campaigns[campaign].createdAt.getMonth() + '/'+
-                campaigns[campaign].createdAt.getFullYear(); %>
+                <%let month = campaigns[campaign].createdAt.getMonth()+1%> Last
+                Sent <%=campaigns[campaign].createdAt.getDate() + '/'+ month +
+                '/'+ campaigns[campaign].createdAt.getFullYear(); %>
               </p>
             </td>
             <td>

@@ -32,7 +32,12 @@ function edit(req, res) {
   );
 }
 
+function send(req, res) {
+  res.render("sent-campaign");
+}
+
 module.exports = {
-  index: index,
-  edit: edit
+  index,
+  edit,
+  send
 };

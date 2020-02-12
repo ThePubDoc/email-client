@@ -23,7 +23,7 @@
           onclick="window.location.href = '/campaigns/create'"
         >
           Create a Campaign
-        </button  onclick="window.location.href = '/campaigns/send'">
+        </button>
         <button class="panel-button">Send a Campaign</button>
         <a href="/"><i class="fas fa-envelope"></i>Campaigns Queue</a>
         <a href="/campaigns/completed"
@@ -31,18 +31,12 @@
         >
       </div>
       <div id="main-content">
-        <h1><i class="fas fa-envelope"></i>Send an Email Campaign</h1>
-        <p class="subject">Email Campaign Settings</p>
-        <form
-          action="/campaigns/send"
-          method="POST"
-          enctype="multipart/form-data"
-        >
+        <h1><i class="fas fa-paper-plane"></i>Send an Email Campaign</h1>
+        <p class="subject">Select a List(s)</p>
+        <form action="/campaigns/send" method="POST">
           <div>
-            <label for="">Email Campaign Name</label>
+            <label for="">Lists</label>
             <div class="scrollable-vertical">
-
-
               <% for ( list in lists){%>
 
               <div>
@@ -53,6 +47,8 @@
               <%}%>
             </div>
           </div>
+
+          <p class="subject">Email Campaign Settings</p>
 
           <div>
             <label for="format">Send This Email Campaign</label>
