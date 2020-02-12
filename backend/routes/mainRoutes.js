@@ -46,6 +46,7 @@ router.route("/lists/create").get(mainController.create_list);
 router.route("/lists/edit").get(mainController.edit_list);
 router.route("/lists/delete").get(mainController.del_list);
 router.route("/lists/copy").get(mainController.copy_list);
+router.route("/lists/view").get(mainController.view_list);
 
 router.route("/reports").get(mainController.reports);
 router.route("/listreports").get(mainController.listreports);

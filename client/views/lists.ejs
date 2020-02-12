@@ -80,7 +80,7 @@
             <td class="fixed-width-22">
               <p class="subject"><%= lists[list].name %></p>
               <div class="smaller hover-only">
-                <a href="">[view contacts]</a>
+                <a href="/lists/view?id=<%= lists[list]._id %>">[view contacts]</a>
                 <a href="">[add contacts]</a>
                 <a href="/lists/copy?id=<%= lists[list]._id %>">[copy]</a>
                 <a href="/lists/edit?id=<%= lists[list]._id %>" class="edit"
