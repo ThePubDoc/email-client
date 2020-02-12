@@ -276,7 +276,7 @@ body .panel-button {
   border-radius: 5px;
   background-color: #f4f4f4;
   border: 1px solid #c4c4c4;
-  padding: 0.3rem 0.3rem;
+  padding: 0.3rem 0;
   font-weight: bold;
 }
 
@@ -286,7 +286,7 @@ body .panel-button:hover {
 }
 
 body .panel-button-large {
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 0;
   background-color: #c72926;
   color: white;
   border: none;
@@ -402,6 +402,10 @@ body table.data-container tr:hover {
 
 body table.data-container tr:hover .hover-only {
   display: inline;
+}
+
+body table.data-container th {
+  text-align: left;
 }
 
 body form {

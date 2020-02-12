@@ -34,7 +34,7 @@ nav #nav-logo #user-info a {
   padding: 0.5rem 0.3rem;
 }
 
-nav #nav-logo p.logo {
+nav #nav-logo a.logo {
   margin: 0;
   font-size: 1.3rem;
   color: white;
@@ -151,6 +151,7 @@ section#main-section div#main-content div#pagination-bar {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 0.3rem;
+  border-radius: 5px;
 }
 
 section#main-section div#main-content div#pagination-bar p {
@@ -186,6 +187,19 @@ section#main-section div#main-content div#pagination-bar .sub-bar button {
   font-size: 0.7rem;
   padding: 0.1rem;
   font-weight: 100;
+}
+
+section#main-section div#main-content div.page-info {
+  border-radius: 5px;
+  background-color: #dfeaff;
+  padding: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+section#main-section div#main-content div.page-info p {
+  margin: 0;
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
 section#main-section div#main-content .data-container tr td.fixed-width-14 {

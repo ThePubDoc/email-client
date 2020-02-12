@@ -217,7 +217,7 @@ body {
     background-color: #f4f4f4;
     color: map-get($colors, darktxt);
     border: 1px solid map-get($colors, border);
-    padding: 0.3rem 0.3rem;
+    padding: 0.3rem 0;
     font-weight: bold;
 
     &:hover {
@@ -227,7 +227,7 @@ body {
   }
 
   .panel-button-large {
-    padding: 0.7rem 1.5rem;
+    padding: 0.7rem 0;
     background-color: map-get($colors, punch);
     color: white;
     border: none;
@@ -324,6 +324,10 @@ body {
           display: inline;
         }
       }
+    }
+
+    th {
+      text-align: left;
     }
   }
 
