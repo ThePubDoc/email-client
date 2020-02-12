@@ -40,7 +40,7 @@
               <% for ( list in lists){%>
 
               <div>
-                <input type="checkbox" name="" id="" />
+                <input type="checkbox" name="lists" id="" value="<%= lists[list]._id%>"/>
                 <label for=""> <%= lists[list].name%> </label>
               </div>
 
@@ -52,30 +52,29 @@
 
           <div>
             <label for="format">Send This Email Campaign</label>
-            <select name="" id="" required>
+            <select name="campaign_id" id="" required>
               <option value="html">Please Select an Email Campaign</option>
 
               <% for (campaign in campaigns){%>
 
-              <option value="markdown"> <%=campaigns[campaign].name%> </option>
-
+              <option value="<%= campaigns[campaign]._id%>"> <%=campaigns[campaign].name%> </option>
               <%}%>
             </select>
           </div>
 
           <div>
             <label for="subject">Send From This Name</label>
-            <input type="text" name="" required />
+            <input type="text" name="subject" required />
           </div>
 
           <div>
             <label for="subject">Send From This Email Address</label>
-            <input type="email" name="" required />
+            <input type="email" name="sender_email" required />
           </div>
 
           <div>
             <label for="subject">Send Reply Emails to</label>
-            <input type="email" name="" required />
+            <input type="email" name="reply_email" required />
           </div>
 
           <div>

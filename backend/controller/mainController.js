@@ -174,6 +174,28 @@ function view_list(req,res){
   })
 }
 
+function add_contact(req,res){
+  const id = req.query.id;
+  List.findOne({_id : id}).exec((err,doc)=>{
+    if(err){
+      console.log("Error in viewing list")
+    }
+    else{
+      const file_url = path.join(__dirname, "../../", doc.file_url)
+      
+      fs.createReadStream(file_url)
+      .pipe(csv())
+      .on('data', (data) => contacts.push(data))
+      .on('end', () => {
+        res.render("view-list",{
+          contacts
+        })
+        console.log(contacts)
+      });
+    }
+  })
+}
+
 async function reports(req, res) {
   const campaigns = await Campaign.find({});
   res.render("reports", {
@@ -202,6 +224,7 @@ module.exports = {
   del_list,
   copy_list,
   view_list,
+  add_contact,
   send_campaign,
   reports,
   listreports
