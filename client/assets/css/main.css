@@ -199,4 +199,16 @@ section#main-section div#main-content .data-container tr td.fixed-width-3 {
 section#main-section div#main-content .data-container tr td.fixed-width-22 {
   min-width: 22rem;
 }
+
+section#main-section div#main-content form .scrollable-vertical div {
+  display: -ms-grid;
+  display: grid;
+  text-align: left;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
+}
+
+section#main-section div#main-content form .scrollable-vertical div input {
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */

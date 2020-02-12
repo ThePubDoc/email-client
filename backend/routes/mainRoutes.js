@@ -39,14 +39,13 @@ router.route("/campaigns/delete").get(mainController.del_campaign);
 router.route("/campaigns/copy").get(mainController.copy_campaign);
 router.route("/campaigns/view").get(mainController.view_campaign);
 router.route("/campaigns/completed").get(mainController.completed_campaigns);
+router.route("/campaigns/send").get(mainController.send_campaign);
 
 router.route("/lists").get(mainController.lists);
 router.route("/lists/create").get(mainController.create_list);
 router.route("/lists/edit").get(mainController.edit_list);
 router.route("/lists/delete").get(mainController.del_list);
 router.route("/lists/copy").get(mainController.copy_list);
-
-
 
 router
   .route("/campaigns/create")
@@ -60,6 +59,6 @@ router
   .post(listFiles.single("file"), listController.createList);
 router
   .route("/lists/edit")
-  .post(listFiles.single("file"), listController.edit_list)
+  .post(listFiles.single("file"), listController.edit_list);
 
 module.exports = router;

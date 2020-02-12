@@ -103,6 +103,8 @@ section#main-section {
   }
 
   div#main-content {
+    padding: 0 1rem;
+
     h1 {
       font-size: 1.2rem;
       color: map-get($colors, header);
@@ -123,8 +125,6 @@ section#main-section {
       color: map-get($colors, txt);
       margin: 0.3rem 0;
     }
-
-    padding: 0 1rem;
 
     div#pagination-bar {
       display: flex;
@@ -175,6 +175,20 @@ section#main-section {
 
           &.fixed-width-22 {
             min-width: 22rem;
+          }
+        }
+      }
+    }
+
+    form {
+      .scrollable-vertical {
+        div {
+          display: grid;
+          text-align: left;
+          grid-template-columns: 10% 90%;
+
+          input {
+            width: 100%;
           }
         }
       }

@@ -23,9 +23,9 @@
           onclick="window.location.href = '/campaigns/create'"
         >
           Create a Campaign
-        </button>
+        </button  onclick="window.location.href = '/campaigns/send'">
         <button class="panel-button">Send a Campaign</button>
-        <a href="/"><i class="fas fa-envelope"></i>Campaigns</a>
+        <a href="/"><i class="fas fa-envelope"></i>Campaigns Queue</a>
         <a href="/campaigns/completed"
           ><i class="fas fa-check-circle"></i>Completed Queue</a
         >
@@ -41,10 +41,16 @@
           <div>
             <label for="">Email Campaign Name</label>
             <div class="scrollable-vertical">
+
+
+              <% for ( list in lists){%>
+
               <div>
                 <input type="checkbox" name="" id="" />
-                <label for="">Campus Ambassador</label>
+                <label for=""> <%= lists[list].name%> </label>
               </div>
+
+              <%}%>
             </div>
           </div>
 
@@ -52,7 +58,12 @@
             <label for="format">Send This Email Campaign</label>
             <select name="" id="" required>
               <option value="html">Please Select an Email Campaign</option>
-              <option value="markdown">CA</option>
+
+              <% for (campaign in campaigns){%>
+
+              <option value="markdown"> <%=campaigns[campaign].name%> </option>
+
+              <%}%>
             </select>
           </div>
 

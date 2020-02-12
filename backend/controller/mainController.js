@@ -11,6 +11,15 @@ async function index(req, res) {
   });
 }
 
+async function send_campaign(req, res) {
+  const campaigns = await Campaign.find({});
+  const lists = await List.find({});
+  res.render("send-campaign", {
+    lists,
+    campaigns
+  });
+}
+
 async function completed_campaigns(req, res) {
   const campaigns = await Campaign.find({});
   res.render("completed-campaigns", {
@@ -153,5 +162,6 @@ module.exports = {
   lists,
   edit_list,
   del_list,
-  copy_list
+  copy_list,
+  send_campaign
 };

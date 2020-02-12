@@ -346,7 +346,8 @@ body {
 
       input,
       select,
-      textarea {
+      textarea,
+      .scrollable-vertical {
         box-sizing: border-box;
         width: 30rem;
         padding: 0.2rem;
@@ -369,8 +370,9 @@ body {
   }
 
   .scrollable-vertical {
+    border: 1px solid map-get($colors, border);
     overflow-y: scroll;
-    height: 400px;
+    height: 150px;
   }
 }
 

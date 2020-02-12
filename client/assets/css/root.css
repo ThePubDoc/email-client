@@ -440,7 +440,8 @@ body form div label {
 
 body form div input,
 body form div select,
-body form div textarea {
+body form div textarea,
+body form div .scrollable-vertical {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 30rem;
@@ -451,7 +452,8 @@ body form div textarea {
 
 body form div input:focus,
 body form div select:focus,
-body form div textarea:focus {
+body form div textarea:focus,
+body form div .scrollable-vertical:focus {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   border-color: #0057a4;
@@ -459,7 +461,8 @@ body form div textarea:focus {
 
 body form div input[type="file"],
 body form div select[type="file"],
-body form div textarea[type="file"] {
+body form div textarea[type="file"],
+body form div .scrollable-vertical[type="file"] {
   padding: 0;
 }
 
@@ -469,7 +472,8 @@ body form div button {
 }
 
 body .scrollable-vertical {
+  border: 1px solid #c4c4c4;
   overflow-y: scroll;
-  height: 400px;
+  height: 150px;
 }
 /*# sourceMappingURL=root.css.map */
