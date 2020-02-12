@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <title>KonfinityPost</title>
+  </head>
+  <body>
+    <% include nav/report %>
+
+    <section id="main-section">
+      <div id="sidebar">
+        <a href="/reports" class="current">&gt; Campaign</a>
+        <a href="/lists">&gt; List</a>
+
+        <div class="sidebar-options">
+          <p class="subject">List Options</p>
+          <button class="option-button">
+            <i class="fas fa-search"></i>Search Contacts
+          </button>
+          <button class="option-button">
+            <i class="fas fa-trash"></i>Remove Contacts
+          </button>
+        </div>
+      </div>
+
+      <div id="main-content">
+        <h1><i class="fas fa-folder"></i>Campaign Reports</h1>
+        <div id="pagination-bar">
+          <div id="left-bar" class="sub-bar">
+            <input type="checkbox" name="" id="" />
+            <select name="" id="">
+              <option value="">Choose an Action</option>
+            </select>
+            <button>Go</button>
+          </div>
+          <div id="right-bar" class="sub-bar">
+            <select name="" id="">
+              <option value="">10 per page</option>
+            </select>
+            <p>[Page 1 of 1]</p>
+            <p>
+              <a> <i class="fas fa-fast-backward"></i></a>
+              <a><i class="fas fa-step-backward"></i></a>
+              <a>1</a>
+              <a> <i class="fas fa-step-forward"></i></a>
+              <a><i class="fas fa-fast-forward"></i></a>
+            </p>
+          </div>
+        </div>
+
+        <table class="data-container">
+          <%for(campaign in campaigns){%>
+
+          <tr>
+            <td class="fixed-width-3">
+              <input class="table-ip" type="checkbox" name="" id="" />
+            </td>
+
+            <td>
+              <p class="subject">3</p>
+              <p class="smaller">
+                recipients
+              </p>
+            </td>
+
+            <td>
+              <p class="subject">0</p>
+              <p class="smaller">
+                unsubscribes
+              </p>
+            </td>
+
+            <td>
+              <p class="subject">0</p>
+              <p class="smaller">
+                bounces
+              </p>
+            </td>
+
+            <td class="fixed-width-14">
+              <p class="subject">Test</p>
+              <div class="smaller hover-only">
+                <a target="blank" href="">[view]</a>
+                <a href="">[send]</a>
+                <a href="">[print]</a>
+                <a href="" class="delete">[delete]</a>
+              </div>
+            </td>
+
+            <td class="fixed-width-14">
+              <p><%=campaigns[campaign].name%></p>
+              <p class="smaller create-date">
+                <%=campaigns[campaign].createdAt.getDate() + '/'+
+                campaigns[campaign].createdAt.getMonth() + '/'+
+                campaigns[campaign].createdAt.getFullYear(); %>
+              </p>
+            </td>
+          </tr>
+
+          <%}%>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>

@@ -40,6 +40,7 @@ router.route("/campaigns/copy").get(mainController.copy_campaign);
 router.route("/campaigns/view").get(mainController.view_campaign);
 router.route("/campaigns/completed").get(mainController.completed_campaigns);
 router.route("/campaigns/send").get(mainController.send_campaign);
+router.route("/reports").get(mainController.reports);
 
 router.route("/lists").get(mainController.lists);
 router.route("/lists/create").get(mainController.create_list);

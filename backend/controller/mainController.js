@@ -3,7 +3,7 @@ const List = require("../models/list");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
-const csv = require('csv-parser');
+const csv = require("csv-parser");
 
 async function index(req, res) {
   const campaigns = await Campaign.find({});
@@ -151,6 +151,13 @@ function copy_list(req, res) {
   });
 }
 
+async function reports(req, res) {
+  const campaigns = await Campaign.find({});
+  res.render("reports", {
+    campaigns
+  });
+}
+
 module.exports = {
   index,
   completed_campaigns,
@@ -164,5 +171,6 @@ module.exports = {
   edit_list,
   del_list,
   copy_list,
-  send_campaign
+  send_campaign,
+  reports
 };
