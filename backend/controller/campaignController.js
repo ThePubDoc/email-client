@@ -25,11 +25,12 @@ function index(req, res) {
 }
 
 function edit(req, res) {
+  const html_content = req.file.buffer.toString();
   const id = req.query.id;
   const { name, format, subject } = req.body;
   Campaign.findOneAndUpdate(
     { _id: id },
-    { name, format, subject },
+    { name, format, subject,html_content },
     { upsert: false },
     (err, doc) => {
       if (err) {

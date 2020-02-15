@@ -73,12 +73,12 @@ function copy_campaign(req, res) {
     if (err) {
       console.log("Error in fetching in cpoy");
     } else {
-      const { name, format, subject, file_url } = doc;
+      const { name, format, subject, html_content } = doc;
       const campaign_instance = new Campaign({
         name,
         format,
         subject,
-        file_url
+        html_content
       });
       campaign_instance.save();
       res.redirect("/");
@@ -94,6 +94,7 @@ function view_campaign(req, res) {
     } else {
       console.log(doc.html_content);
       const data = doc.html_content;
+      console.log(data)
       res.send(data);
       // const file_url = path.join(__dirname, "../../", doc.file_url);
       // const file_url = "../"+ doc.file_url;
@@ -153,10 +154,12 @@ function copy_list(req, res) {
     if (err) {
       console.log("Error in fetching in cpoy");
     } else {
-      const { name, file_url } = doc;
+      const { name, file_url, contacts, emails } = doc;
       const list_instance = new List({
         name,
-        file_url
+        file_url,
+        contacts,
+        emails
       });
       list_instance.save();
       res.redirect("/lists");
