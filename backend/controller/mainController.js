@@ -23,9 +23,10 @@ async function send_campaign(req, res) {
 }
 
 async function sent_campaign(req, res) {
-  const sentCampaigns = await SentCampiagn.find({});
+  const id = req.query.id;
+  const sentCampaign = await SentCampiagn.find({_id : id});
   res.render("sent-campaign", {
-    sentCampaigns
+    sentCampaign
   });
 }
 
