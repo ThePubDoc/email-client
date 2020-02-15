@@ -24,7 +24,8 @@ async function send_campaign(req, res) {
 
 async function sent_campaign(req, res) {
   const id = req.query.id;
-  const sentCampaign = await SentCampiagn.find({_id : id});
+  const sentCampaignList = await SentCampiagn.find({ _id: id });
+  sentCampaign = sentCampaignList[0];
   res.render("sent-campaign", {
     sentCampaign
   });
@@ -163,49 +164,47 @@ function copy_list(req, res) {
   });
 }
 
-function view_list(req,res){
+function view_list(req, res) {
   const id = req.query.id;
   const contacts = [];
-  List.findOne({_id : id}).exec((err,doc)=>{
-    if(err){
-      console.log("Error in viewing list")
-    }
-    else{
-      const file_url = path.join(__dirname, "../../", doc.file_url)
-      
+  List.findOne({ _id: id }).exec((err, doc) => {
+    if (err) {
+      console.log("Error in viewing list");
+    } else {
+      const file_url = path.join(__dirname, "../../", doc.file_url);
+
       fs.createReadStream(file_url)
-      .pipe(csv())
-      .on('data', (data) => contacts.push(data))
-      .on('end', () => {
-        res.render("view-list",{
-          contacts
-        })
-        console.log(contacts)
-      });
+        .pipe(csv())
+        .on("data", data => contacts.push(data))
+        .on("end", () => {
+          res.render("view-list", {
+            contacts
+          });
+          console.log(contacts);
+        });
     }
-  })
+  });
 }
 
-function add_contact(req,res){
+function add_contact(req, res) {
   const id = req.query.id;
-  List.findOne({_id : id}).exec((err,doc)=>{
-    if(err){
-      console.log("Error in viewing list")
-    }
-    else{
-      const file_url = path.join(__dirname, "../../", doc.file_url)
-      
+  List.findOne({ _id: id }).exec((err, doc) => {
+    if (err) {
+      console.log("Error in viewing list");
+    } else {
+      const file_url = path.join(__dirname, "../../", doc.file_url);
+
       fs.createReadStream(file_url)
-      .pipe(csv())
-      .on('data', (data) => contacts.push(data))
-      .on('end', () => {
-        res.render("view-list",{
-          contacts
-        })
-        console.log(contacts)
-      });
+        .pipe(csv())
+        .on("data", data => contacts.push(data))
+        .on("end", () => {
+          res.render("view-list", {
+            contacts
+          });
+          console.log(contacts);
+        });
     }
-  })
+  });
 }
 
 async function reports(req, res) {
