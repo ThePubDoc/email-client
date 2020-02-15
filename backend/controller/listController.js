@@ -4,29 +4,38 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 const csv = require('csv-parser');
+const csvtojson = require("csvtojson");
 
-
-function createList(req, res) {
+async function createList(req, res) {
   try {
     const file_url = req.file.path;
     const { name } = req.body;
     let list_instance = new List({ name, file_url });
     console.log(list_instance)
     const new_file_url = path.join(__dirname ,"../../" , list_instance.file_url);
-    const results = [];
- 
-    fs.createReadStream(new_file_url)
-      .pipe(csv())
-      .on('data', (data) => results.push(data))
-      .on('end', () => {
-        const contacts = results.length;
-        list_instance = new List({name, file_url, contacts})
-        list_instance.save();
-        log.info("saved");
-        res.redirect("/lists");
-      });    
+    let emails = [];
+    const users = await csvtojson().fromFile(new_file_url);
+    // console.log(array);
+    for(user in users){
+      emails.push(users[user].Email);
+    }
+    const contacts = emails.length;
+    list_instance = new List({name, file_url, contacts, emails});
+    list_instance.save();
+    log.info("saved");
+    res.redirect("/lists");
+    // fs.createReadStream(new_file_url)
+    //   .pipe(csv())
+    //   .on('data', (data) => results.push(data))
+    //   .on('end', () => {
+    //     const contacts = results.length;
+    //     list_instance = new List({name, file_url, contacts})
+    //     list_instance.save();
+    //     log.info("saved");
+    //     res.redirect("/lists");
+    //   });    
   } catch (err) {
-    log.info("Some error occured in campaign insert");
+    log.info(err);
   }
 }
 

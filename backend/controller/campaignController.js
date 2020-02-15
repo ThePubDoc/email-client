@@ -3,12 +3,19 @@ const SentCampiagn = require("../models/sent-campaign");
 const List = require("../models/list");
 const log = require("../../utils").log;
 const multer = require("multer");
+const fs = require("fs")
+const path = require("path")
+const csv = require('csv-parser');
+var AWS = require("aws-sdk");
+
+AWS.config.loadFromPath(path.join(__dirname,"../../","aws.json"));
 
 function index(req, res) {
   try {
-    const file_url = req.file.path;
+    const html_content = req.file.buffer.toString();
     const { name, format, subject } = req.body;
-    const campaign_instance = new Campaign({ name, format, subject, file_url });
+    // console.log(req.file.buffer.toString())
+    const campaign_instance = new Campaign({ name, format, subject, html_content });
     campaign_instance.save();
     log.info("saved");
     res.redirect("/");
@@ -36,15 +43,20 @@ function edit(req, res) {
 
 async function send(req, res) {
   const {lists, campaign_id, sender, sender_email, reply_email } = req.body;
-  console.log(lists)
+  // console.log(lists)
   const selectedCampaign = await Campaign.findOne({_id : campaign_id})
   const campaign = selectedCampaign.name;
   const campaign_subject = selectedCampaign.subject;
+  const template = selectedCampaign.html_content;
 
   let total_contacts = 0;
+  let destinations = [];
   if(Array.isArray(lists)){
     for(list in lists){
       const selectedList = await List.findOne({_id : lists[list]});
+      for(email in selectedList.emails){
+        destinations.push(selectedList.emails[email]);
+      }
       total_contacts = total_contacts + selectedList.contacts;
     }
   }
@@ -52,6 +64,49 @@ async function send(req, res) {
     const selectedList = await List.findOne({_id : lists});
     total_contacts = selectedList.contacts;
   }
+  var params = {
+    Destination: { /* required */
+      CcAddresses: [
+        'admin@konfinity.com',
+        /* more items */
+      ],
+      ToAddresses: destinations
+    },
+    Message: { /* required */
+      Body: { /* required */
+        Html: {
+         Charset: "UTF-8",
+         Data: template
+        },
+        Text: {
+         Charset: "UTF-8",
+         Data: "TEXT_FORMAT_BODY"
+        }
+       },
+       Subject: {
+        Charset: 'UTF-8',
+        Data: 'Test email'
+       }
+      },
+    Source: 'admin@konfinity.com', /* required */
+    ReplyToAddresses: [
+       'noreply@konfinity.com',
+      /* more items */
+    ],
+  };
+  
+  // Create the promise and SES service object
+  var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
+  
+  // Handle promise's fulfilled/rejected states
+  // sendPromise.then(
+  //   function(data) {
+  //     console.log(data.MessageId);
+  //   }).catch(
+  //     function(err) {
+  //     console.error(err, err.stack);
+  //   });
+  // console.log("---",destinations)
 
   const sent_campaign_instance = new SentCampiagn({campaign, campaign_subject, sender, sender_email, reply_email, lists, total_contacts})
   sent_campaign_instance.save();

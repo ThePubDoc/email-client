@@ -2,8 +2,8 @@ var AWS = require("aws-sdk");
 
 AWS.config.loadFromPath(__dirname + '/aws.json');
 
-var ses_mail = "From: <" + "aayush9152@gmail.com" + ">\n";
-    ses_mail = ses_mail + "To: " + "aayushsas@gmail.com" + "\n";
+var ses_mail = "From: <" + "admin@konfinity.com" + ">\n";
+    ses_mail = ses_mail + "To: " + "aayush9152@gmail.com" + "\n";
     ses_mail = ses_mail + "Subject: AWS SES Attachment Example\n";
     ses_mail = ses_mail + "MIME-Version: 1.0\n";
     ses_mail = ses_mail + "Content-Type: multipart/mixed; boundary=\"NextPart\"\n\n";
@@ -16,17 +16,9 @@ var ses_mail = "From: <" + "aayush9152@gmail.com" + ">\n";
     var params = {
         RawMessage: { Data: new Buffer(ses_mail) },
         Destinations: [ "aayush9152@gmail.com" ],
-        Source: "<" + "aayush9152@gmail.com" + ">'"
+        Source: "<" + "admin@konfinity.com" + ">'"
     };
     
-    // ses.sendRawEmail(params, function(err, data) {
-    //     if(err) {
-    //         res.send(err);
-    //     } 
-    //     else {
-    //         res.send(data);
-    //     }           
-    // });
 
   var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendRawEmail(params).promise();
 

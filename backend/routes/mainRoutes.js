@@ -8,7 +8,7 @@ const router = express.Router();
 const app = express();
 const multer = require("multer");
 
-var campaignStorage = multer.diskStorage({
+var campaignStorage = multer.memoryStorage({
   destination: function(req, file, cb) {
     cb(null, "./uploads/campaign");
   },
@@ -69,4 +69,8 @@ router
   .route("/lists/edit")
   .post(listFiles.single("file"), listController.edit_list);
 
+router
+  .route("/campaigns/send")
+  .post(campaignController.send);
+  
 module.exports = router;

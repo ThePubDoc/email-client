@@ -90,16 +90,19 @@ function view_campaign(req, res) {
     if (err) {
       console.log("Error in viewing campaign file");
     } else {
-      const file_url = path.join(__dirname, "../../", doc.file_url);
+      console.log(doc.html_content);
+      const data = doc.html_content;
+      res.send(data);
+      // const file_url = path.join(__dirname, "../../", doc.file_url);
       // const file_url = "../"+ doc.file_url;
       // console.log(file_url)
-      fs.readFile(file_url, "utf8", (err, data) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send(data);
-        }
-      });
+      // fs.readFile(file_url, "utf8", (err, data) => {
+      //   if (err) {
+      //     console.log(err);
+      //   } else {
+      //     res.send(data);
+      //   }
+      // });
     }
   });
 }
