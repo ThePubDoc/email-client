@@ -40,34 +40,43 @@
         <div id="campaign-details">
           <div>
             <i class="fas fa-check"></i>
-            <p>Your email campaign is called Test</p>
+            <p>Your email campaign is called <%=sentCampaign.campaign%></p>
           </div>
 
           <div>
             <i class="fas fa-check"></i>
             <p>
-              The subject line of your email campaign is Test
+              The subject line of your email campaign is
+              <%=sentCampaign.campaign_subject%>
             </p>
           </div>
 
           <div>
             <i class="fas fa-check"></i>
             <p>
-              Your email campaign will be sent to Campus Ambassador
+              Your email campaign will be sent to <%=sentCampaign.list%>
             </p>
           </div>
 
           <div>
             <i class="fas fa-check"></i>
             <p>
-              It will be sent to approximately 3 contacts
+              It will be sent to approximately <%=sentCampaign.total_contacts%>
+              contacts
             </p>
           </div>
 
           <div>
             <i class="fas fa-check"></i>
             <p>
-              Your job has been scheduled to run at 20/02/2020
+              The email will be sent by <%=sentCampaign.sender_email%>
+            </p>
+          </div>
+
+          <div>
+            <i class="fas fa-check"></i>
+            <p>
+              Receivers can reply to <%=sentCampaign.reply_email%>
             </p>
           </div>
 
