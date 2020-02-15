@@ -62,12 +62,16 @@ async function send(req, res) {
   }
   else{
     const selectedList = await List.findOne({_id : lists});
+    for(email in selectedList.emails){
+      destinations.push(selectedList.emails[email]);
+    }
     total_contacts = selectedList.contacts;
   }
+  console.log(destinations)
   var params = {
     Destination: { /* required */
       CcAddresses: [
-        'admin@konfinity.com',
+        sender_email
         /* more items */
       ],
       ToAddresses: destinations
@@ -85,12 +89,12 @@ async function send(req, res) {
        },
        Subject: {
         Charset: 'UTF-8',
-        Data: 'Test email'
+        Data: campaign_subject
        }
       },
-    Source: 'admin@konfinity.com', /* required */
+    Source: sender_email, /* required */
     ReplyToAddresses: [
-       'noreply@konfinity.com',
+       reply_email,
       /* more items */
     ],
   };
