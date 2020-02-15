@@ -52,7 +52,7 @@ async function send(req, res) {
   let total_contacts = 0;
   let destinations = [];
   let lists_name = [];
-  if(Array.isArray(lists_name)){
+  if(Array.isArray(lists_id)){
     for(list in lists_id){
       const selectedList = await List.findOne({_id : lists_id[list]});
       lists_name.push(selectedList.name);
@@ -63,7 +63,8 @@ async function send(req, res) {
     }
   }
   else{
-    const selectedList = await List.findOne({_id : lists});
+    const selectedList = await List.findOne({_id : lists_id});
+    lists_name.push(selectedList.name);
     for(email in selectedList.emails){
       destinations.push(selectedList.emails[email]);
     }
