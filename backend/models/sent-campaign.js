@@ -9,7 +9,8 @@ const sentCampaignSchema = new schema(
     sender: { type: String, required: true },
     sender_email: { type: String, required: true },
     reply_email: { type: String, requiredl: true },
-    lists: { type: Array, required: true },
+    lists_id: { type: Array, required: true },
+    lists_name: {type: Array, required: true},
     total_contacts: { type: Number, required: true }
   },
   { timestamps: true }

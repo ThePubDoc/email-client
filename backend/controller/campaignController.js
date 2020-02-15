@@ -42,7 +42,7 @@ function edit(req, res) {
 }
 
 async function send(req, res) {
-  const {lists, campaign_id, sender, sender_email, reply_email } = req.body;
+  const {lists_id, campaign_id, sender, sender_email, reply_email } = req.body;
   // console.log(lists)
   const selectedCampaign = await Campaign.findOne({_id : campaign_id})
   const campaign = selectedCampaign.name;
@@ -51,9 +51,11 @@ async function send(req, res) {
 
   let total_contacts = 0;
   let destinations = [];
-  if(Array.isArray(lists)){
-    for(list in lists){
-      const selectedList = await List.findOne({_id : lists[list]});
+  let lists_name = [];
+  if(Array.isArray(lists_name)){
+    for(list in lists_id){
+      const selectedList = await List.findOne({_id : lists_id[list]});
+      lists_name.push(selectedList.name);
       for(email in selectedList.emails){
         destinations.push(selectedList.emails[email]);
       }
@@ -112,7 +114,7 @@ async function send(req, res) {
   //   });
   // console.log("---",destinations)
 
-  const sent_campaign_instance = new SentCampiagn({campaign, campaign_subject, sender, sender_email, reply_email, lists, total_contacts})
+  const sent_campaign_instance = new SentCampiagn({campaign, campaign_subject, sender, sender_email, reply_email, lists_id, lists_name, total_contacts})
   sent_campaign_instance.save();
   // console.log(sent_campaign_instance);
   res.redirect("/campaigns/sent?id="+sent_campaign_instance._id);
