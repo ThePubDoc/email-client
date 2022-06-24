@@ -27,7 +27,7 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.5.0",
     "localtunnel": "^1.9.2",
     "mongoose": "^5.8.11",
     "morgan": "^1.9.1",
